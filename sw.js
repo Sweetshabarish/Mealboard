@@ -2,7 +2,7 @@
    The app opens from the cache straight away and quietly fetches a newer copy
    in the background, so it works with no signal and still picks up updates.
    Bump VERSION on every release so old caches are cleared. */
-var VERSION = "2026.10.09-3";
+var VERSION = "2026.10.09-4";
 var CACHE = "mealboard-" + VERSION;
 var CORE = ["./", "./index.html", "./app.html", "./credits.html", "./manifest.webmanifest",
             "./icon-192.png", "./icon-512.png", "./icon-180.png", "./favicon-32.png"];

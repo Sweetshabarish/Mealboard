@@ -812,6 +812,7 @@ input[type=checkbox]{min-width:22px;min-height:22px}
 
 /* app only: no footer (build, about, banana leaf, credits page link) */
 .site-foot{display:none!important}
+.brand .wordmark{cursor:pointer}
 </style>
 </head>
 <body>
@@ -5167,6 +5168,14 @@ window.WORLD["Oceania"] = [
   $("#fToggle").addEventListener("click", function () { fOpen = !fOpen; filters.classList.toggle("fold", !fOpen); paintToggle(); });
   new MutationObserver(paintToggle).observe(filters, { subtree: true, attributes: true, attributeFilter: ["aria-pressed"] });
   filters.addEventListener("change", paintToggle);
+
+
+  /* ---- logo / wordmark → front page ---- */
+  var lb = $("#logoBtn");
+  if (lb) { lb.title = "The Meal Board"; lb.setAttribute("aria-label", "The Meal Board — front page"); }
+  document.addEventListener("click", function (e) {
+    if (e.target.closest("#logoBtn, .brand .wordmark")) { e.preventDefault(); e.stopImmediatePropagation(); location.href = "index.html"; }
+  }, true);
 
   setLabels();
   paintToggle();

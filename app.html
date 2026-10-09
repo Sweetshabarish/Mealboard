@@ -5172,9 +5172,13 @@ window.WORLD["Oceania"] = [
 
   /* ---- logo / wordmark → front page ---- */
   var lb = $("#logoBtn");
-  if (lb) { lb.title = "The Meal Board"; lb.setAttribute("aria-label", "The Meal Board — front page"); }
+  if (lb) { lb.title = "The Meal Board"; lb.setAttribute("aria-label", "The Meal Board — Today, then front page"); }
   document.addEventListener("click", function (e) {
-    if (e.target.closest("#logoBtn, .brand .wordmark")) { e.preventDefault(); e.stopImmediatePropagation(); location.href = "index.html"; }
+    if (!e.target.closest("#logoBtn, .brand .wordmark")) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    var onToday = !!document.querySelector('.tab[data-v="today"][aria-selected="true"]');
+    if (onToday) location.href = "index.html";              // on Today: logo opens the front page
+    else document.querySelector('.tab[data-v="today"]').click(); // anywhere else: logo goes to Today
   }, true);
 
   setLabels();

@@ -809,6 +809,9 @@ input[type=checkbox]{min-width:22px;min-height:22px}
 .track .pro{font-family:"JetBrains Mono",monospace}
 
 @media print{nav,#profBtn,#profPanel,#profScrim,#wkMore,#fToggle{display:none!important}}
+
+/* app only: no footer (build, about, banana leaf, credits page link) */
+.site-foot{display:none!important}
 </style>
 </head>
 <body>
@@ -5102,8 +5105,7 @@ window.WORLD["Oceania"] = [
       '<div class="prow"><span>' + L("lang") + '</span><span id="pLang"></span></div>' +
       '<button class="pbtn" type="button" data-p="settings">' + L("settings") + "</button>" +
       '<button class="pbtn" type="button" data-p="guide">' + (g ? g.textContent : L("guide")) + "</button>" +
-      '<div class="pcounts" id="pCounts"></div>' +
-      '<div class="plinks"><a href="index.html">' + L("about") + '</a><a href="credits.html">' + L("credits") + "</a></div>";
+      '<div class="pcounts" id="pCounts"></div>';
     $("#pLang").appendChild(langSel);
     $("#pCounts").appendChild(cD); $("#pCounts").appendChild(cS);
   }

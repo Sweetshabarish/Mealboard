@@ -379,10 +379,6 @@ const front = HEAD("The Meal Board — plan a week of home cooking", `Plan a wee
       <div class="card"><b>iPhone</b><span>Open in Safari, tap Share, then <b>Add to Home Screen</b>.</span></div>
     </div>
   </div>
-  <footer>
-    <span>The Meal Board · Build ${esc(BUILD)}</span>
-    <span>Dish photos from Wikimedia Commons contributors · <a href="credits.html">Photo credits</a></span>
-  </footer>
 </section>
 </main>
 <script>if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>

@@ -190,9 +190,9 @@ nav.top a:hover{color:var(--leaf)}
 .weeks{padding-block:clamp(64px,9vw,110px)}
 .tracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));border-top:1.5px solid var(--cocoa);margin-top:40px}
 .track{padding:22px 22px 26px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
-.track .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.track .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
 .track h3{font-size:28px}
-.track .pro{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--leaf);white-space:nowrap}
+.track .pro{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--leaf);white-space:normal}
 .track .tag{font-size:13px;font-weight:700;color:var(--rust)}
 .track p{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink2)}
 

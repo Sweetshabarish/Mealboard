@@ -22,7 +22,7 @@ img{max-width:100%}
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="app-version" content="2026.10.09">
+<meta name="app-version" content="2026.10.10">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2046%22%3E%3Cpath%20d%3D%22M12%2010V6Q12%202%2016%202H24Q28%202%2028%206V10%22%20fill%3D%22none%22%20stroke%3D%22%233b2a1e%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%2234%22%20height%3D%2210%22%20rx%3D%224%22%20fill%3D%22%23e7a24a%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2223%22%20width%3D%2234%22%20height%3D%2210%22%20rx%3D%224%22%20fill%3D%22%233b2a1e%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2235%22%20width%3D%2234%22%20height%3D%2210%22%20rx%3D%224%22%20fill%3D%22%233b2a1e%22%2F%3E%3C%2Fsvg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -813,6 +813,17 @@ input[type=checkbox]{min-width:22px;min-height:22px}
 /* app only: no footer (build, about, banana leaf, credits page link) */
 .site-foot{display:none!important}
 .brand .wordmark{cursor:pointer}
+
+/* nutrition per serving */
+.nutrow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0 6px}
+.nut{background:var(--surface2);border-radius:12px;padding:8px 6px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.nut b{font:800 18px/1.1 "Manrope",sans-serif;color:var(--ink)}
+.nut b small{font-size:11px;font-weight:700;margin-left:1px;color:var(--muted)}
+.nut span{font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nut:first-child{background:var(--ui);}
+.nut:first-child b,.nut:first-child span,.nut:first-child small{color:var(--ui-ink)}
+.nuthint{grid-column:1/-1;margin:2px 0 0;font-size:11.5px;color:var(--muted)}
+.chip.kcal{color:var(--ink);background:var(--surface2)}
 </style>
 </head>
 <body>
@@ -972,7 +983,7 @@ input[type=checkbox]{min-width:22px;min-height:22px}
     </div>
   </section>
 
-  <footer class="site-foot"><span>The Meal Board · Build <span class="mono" id="footBuild">2026.10.09</span> · <a href="index.html">About Meal Board</a> · <a href="credits.html">Photo credits</a></span><button id="leafBtn" data-t="logo_title">Why a banana leaf?</button></footer>
+  <footer class="site-foot"><span>The Meal Board · Build <span class="mono" id="footBuild">2026.10.10</span> · <a href="index.html">About Meal Board</a> · <a href="credits.html">Photo credits</a></span><button id="leafBtn" data-t="logo_title">Why a banana leaf?</button></footer>
 
 </main>
 
@@ -994,584 +1005,584 @@ input[type=checkbox]{min-width:22px;min-height:22px}
 window.DISHES = [
 
 /* ========== KARNATAKA ========== */
-{id:"k1", name:"Neer Dosa", local:"ನೀರ್ ದೋಸೆ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Karnataka"], slots:["breakfast"], time:25, ahead:"Soak rice 4 hrs", protein:8, heat:0,
+{id:"k1", name:"Neer Dosa", local:"ನೀರ್ ದೋಸೆ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Karnataka"], slots:["breakfast"], time:25, ahead:"Soak rice 4 hrs", protein:6, kcal:345, carbs:45, fat:16, fibre:4, heat:0,
  blurb:"Lace-thin, no fermentation, no fuss. Batter is watery on purpose — that is the whole trick.",
  ings:["Raw rice (sona masoori) — 1 cup, soaked 4 hrs","Grated coconut — 1/2 cup","Salt — 3/4 tsp","Water — about 2 cups, added in stages","Oil — for the tawa","For chutney: coconut 1 cup, roasted chana dal 2 tbsp, 2 green chillies, small ginger, salt","Tempering: 1 tsp oil, 1/2 tsp mustard, 1 dry red chilli, curry leaves"],
  steps:["Grind soaked rice with coconut and a little water to a very smooth paste — run the mixer longer than feels necessary, 4–5 minutes.","Thin it with water until it is the consistency of milk. It should not coat a spoon at all. Add salt.","Heat a tawa till properly hot. Do not spread the batter — pour it from the edges inward in a circle and let it find its own shape.","Cover for 40 seconds. The dosa is done when the edges lift on their own. Do not flip.","Fold into a triangle and stack. Serve with coconut chutney tempered with mustard and curry leaves."],
  tip:"If the first dosa comes out thick and patchy, the batter is not thin enough. Add half a cup more water and try again."},
 
-{id:"k2", name:"Akki Roti", local:"ಅಕ್ಕಿ ರೊಟ್ಟಿ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Karnataka"], slots:["breakfast","dinner"], time:30, protein:7, heat:1,
+{id:"k2", name:"Akki Roti", local:"ಅಕ್ಕಿ ರೊಟ್ಟಿ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Karnataka"], slots:["breakfast","dinner"], time:30, protein:4, kcal:340, carbs:53, fat:12, fibre:3, heat:1,
  blurb:"Rice-flour roti patted straight onto the tawa with your hand. No rolling pin, no resting.",
  ings:["Rice flour — 1.5 cups","Onion — 1, finely chopped","Grated carrot — 1/2 cup","Dill or coriander — a small handful, chopped","Green chillies — 2, minced","Cumin — 1 tsp","Grated coconut — 3 tbsp","Salt — to taste","Hot water — about 1 cup","Oil — 3 tbsp for cooking"],
  steps:["Mix rice flour with all the vegetables, chillies, cumin, coconut and salt while dry.","Add hot water little by little and bring it together into a soft, non-sticky dough. Do not knead hard.","Take a lemon-sized ball. On a greased tawa (off the heat), pat it outward with wet fingers into a thin round. Make 3 holes in it.","Put the tawa on medium heat, drizzle oil into the holes and around the edge, cover and cook 3 minutes.","Flip, cook 2 more minutes uncovered until brown spots appear. Serve hot with coconut chutney or butter."],
  tip:"Pat on a greased banana leaf or butter paper instead of the tawa if the hot pan is awkward — then invert it on."},
 
-{id:"k3", name:"Ragi Mudde with Soppina Saaru", local:"ರಾಗಿ ಮುದ್ದೆ", region:"Karnataka", diet:"veg", tags:["glutenfree"], states:["Karnataka"], slots:["lunch","dinner"], time:40, protein:14, heat:1,
+{id:"k3", name:"Ragi Mudde with Soppina Saaru", local:"ರಾಗಿ ಮುದ್ದೆ", region:"Karnataka", diet:"veg", tags:["glutenfree"], states:["Karnataka"], slots:["lunch","dinner"], time:40, protein:10, kcal:260, carbs:44, fat:5, fibre:8, heat:1,
  blurb:"The most filling, cheapest, highest-calcium plate in the whole library. Swallowed, not chewed.",
  ings:["Ragi flour — 1 cup","Water — 2 cups","Salt — 1/2 tsp","For the saaru: toor dal 1/2 cup","Amaranth or spinach (soppu) — 1 bunch, chopped","Onion — 1, tomato — 1","Sambar powder — 1.5 tsp, tamarind — small lime size","Garlic — 6 cloves, crushed","Tempering: ghee 1 tbsp, mustard, cumin, 2 dry red chillies, curry leaves"],
  steps:["Pressure cook toor dal with the chopped greens, 3 whistles. Mash.","In a pot, fry garlic, onion and tomato, add sambar powder and tamarind water, then the mashed dal. Simmer 10 minutes. Finish with a ghee tempering.","For the mudde: boil 2 cups water with salt. Add ragi flour all at once, do not stir. Cover and leave 2 minutes on low.","Now take a wooden masher and beat it hard against the sides until there are no dry pockets and it comes together as one smooth mass — 3 to 4 minutes of real work.","Wet your palms, shape into smooth balls. Serve with hot saaru, and do not chew — break a piece, dip, swallow."],
  tip:"Lumps mean you stirred too early. Let the flour sit undisturbed in the boiling water first."},
 
-{id:"k4", name:"Bisi Bele Bath", local:"ಬಿಸಿ ಬೇಳೆ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Karnataka"], slots:["lunch","tiffin"], time:45, protein:16, heat:2,
+{id:"k4", name:"Bisi Bele Bath", local:"ಬಿಸಿ ಬೇಳೆ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Karnataka"], slots:["lunch","tiffin"], time:45, protein:15, kcal:455, carbs:66, fat:14, fibre:8, heat:2,
  blurb:"Rice, dal and vegetables cooked into one spiced whole. Travels well and is a complete tiffin on its own.",
  ings:["Rice — 3/4 cup, toor dal — 3/4 cup","Mixed veg (carrot, beans, peas, capsicum) — 2 cups","Tamarind — lime-sized, soaked","Bisi bele bath powder — 3 tbsp","Jaggery — 1 tbsp","Salt — to taste","Ghee — 3 tbsp","Tempering: mustard, curry leaves, 2 dry red chillies, cashews, peanuts","Water — 5 cups"],
  steps:["Pressure cook rice and dal together with 4 cups water, 4 whistles, until very soft. Mash lightly.","Separately boil the vegetables until just tender.","Add tamarind extract, bisi bele bath powder, jaggery and salt to the vegetables and simmer 8 minutes so the powder loses its raw edge.","Fold in the rice-dal mash with 1 more cup hot water. It should be loose — it thickens as it sits. Simmer 5 minutes.","Temper cashews, peanuts, mustard, red chilli and curry leaves in ghee and pour over. Serve with boondi or potato chips."],
  tip:"Make it looser than you think. By the time it reaches your desk at 1 pm it will have set."},
 
-{id:"k5", name:"Vangi Bath", local:"ವಾಂಗಿ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Karnataka"], slots:["tiffin","lunch"], time:30, protein:8, heat:2,
+{id:"k5", name:"Vangi Bath", local:"ವಾಂಗಿ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Karnataka"], slots:["tiffin","lunch"], time:30, protein:7, kcal:330, carbs:48, fat:13, fibre:5, heat:2,
  blurb:"Brinjal rice. Best made with leftover rice, which makes it a genuinely fast tiffin.",
  ings:["Cooked rice, cooled — 3 cups","Small brinjals — 6, quartered lengthwise","Onion — 1, sliced","Vangi bath powder — 2.5 tbsp","Tamarind paste — 1 tsp","Jaggery — 1 tsp","Salt — to taste","Oil — 3 tbsp","Tempering: mustard, chana dal, urad dal, peanuts, curry leaves, 1 dry red chilli"],
  steps:["Heat oil, crackle mustard, then chana dal, urad dal and peanuts till golden. Add curry leaves and red chilli.","Add onion, fry till soft, then the brinjal. Cover and cook 6 minutes till it collapses.","Stir in vangi bath powder, tamarind, jaggery and salt. Cook 2 minutes.","Add the cooled rice and fold gently — lifting, not stirring — until every grain is coated.","Rest 5 minutes off the heat before packing. Top with fried cashews."],
  tip:"Warm rice turns to paste. Use rice from the fridge or spread fresh rice on a plate to cool first."},
 
-{id:"k6", name:"Set Dosa with Vegetable Saagu", local:"ಸೆಟ್ ದೋಸೆ", region:"Karnataka", diet:"veg", tags:["glutenfree", "nuts"], states:["Karnataka"], slots:["breakfast","dinner"], time:30, protein:12, heat:1,
+{id:"k6", name:"Set Dosa with Vegetable Saagu", local:"ಸೆಟ್ ದೋಸೆ", region:"Karnataka", diet:"veg", tags:["glutenfree", "nuts"], states:["Karnataka"], slots:["breakfast","dinner"], time:30, protein:11, kcal:410, carbs:64, fat:12, fibre:7, heat:1,
  blurb:"Soft, thick, spongy dosas served in threes with a coconut-cashew vegetable gravy.",
  ings:["Dosa batter — 3 cups (shop-bought is fine)","Beaten curd — 2 tbsp, folded into the batter","For saagu: carrot, beans, peas, potato — 2 cups diced","Onion — 1, tomato — 1","Grind together: 1/2 cup coconut, 8 cashews, 2 green chillies, 1 tsp poppy seeds, small ginger, coriander stems","Garam masala — 1/2 tsp","Oil — 2 tbsp, salt","Tempering: mustard, curry leaves"],
  steps:["Loosen the batter with curd and a little water so it pours thick but spreads slightly on its own.","For the saagu, temper mustard and curry leaves, fry onion, add tomato, then the vegetables and 1.5 cups water. Cook till tender.","Add the ground coconut-cashew paste, garam masala and salt. Simmer 8 minutes till it thickens to a pourable gravy.","On a medium tawa, pour a ladle of batter and do not spread it. Drizzle oil, cover, cook 2 minutes till the top is set with holes.","Flip for 30 seconds only. Serve three to a plate with hot saagu."],
  tip:"Set dosa wants a cooler tawa and a lid. High heat gives you a crisp dosa, which is the opposite of the point."},
 
-{id:"k7", name:"Majjige Huli", local:"ಮಜ್ಜಿಗೆ ಹುಳಿ", region:"Karnataka", diet:"veg", tags:["glutenfree", "noallium"], states:["Karnataka"], slots:["lunch"], time:30, protein:9, heat:1,
+{id:"k7", name:"Majjige Huli", local:"ಮಜ್ಜಿಗೆ ಹುಳಿ", region:"Karnataka", diet:"veg", tags:["glutenfree", "noallium"], states:["Karnataka"], slots:["lunch"], time:30, protein:4, kcal:145, carbs:10, fat:10, fibre:2, heat:1,
  blurb:"A cooling curd-and-coconut curry. The answer to a hot week and a heavy previous night.",
  ings:["Ash gourd or cucumber — 2 cups, cubed","Sour curd — 1.5 cups, whisked smooth","Grind: 1/2 cup coconut, 2 green chillies, 1 tsp cumin, 1 tbsp soaked chana dal, small ginger","Turmeric — 1/4 tsp, salt","Tempering: 1 tbsp coconut oil, mustard, 1 dry red chilli, curry leaves, pinch of asafoetida"],
  steps:["Boil the cubed vegetable with turmeric, salt and just enough water to cover, until soft but holding shape.","Add the ground coconut paste and simmer 5 minutes.","Take the pot OFF the heat. Let it stop bubbling. Now whisk in the curd.","Return to the lowest possible flame for 2 minutes only, stirring, and pull it off the moment it steams. It must never boil.","Temper in coconut oil and pour over. Serve with rice."],
  tip:"Curd added to a boiling pot splits every single time. Off the heat, then in — that is the whole recipe."},
 
-{id:"k8", name:"Kosambari", local:"ಕೋಸಂಬರಿ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Karnataka"], slots:["side"], time:10, ahead:"Soak dal 2 hrs", protein:9, heat:1,
+{id:"k8", name:"Kosambari", local:"ಕೋಸಂಬರಿ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Karnataka"], slots:["side"], time:10, ahead:"Soak dal 2 hrs", protein:7, kcal:125, carbs:19, fat:3, fibre:3, heat:1,
  blurb:"Raw moong dal salad. Ten minutes, no cooking, and it adds 9 g of protein to any plate.",
  ings:["Moong dal — 1/2 cup, soaked 2 hrs and drained","Cucumber — 1, finely chopped","Grated carrot — 1/2 cup","Grated coconut — 3 tbsp","Green chilli — 1, minced","Lemon — 1","Coriander, salt","Tempering: 1 tsp coconut oil, mustard, curry leaves, pinch of asafoetida"],
  steps:["Drain the soaked dal thoroughly — any water left makes it soggy.","Toss with cucumber, carrot, coconut, chilli, coriander and salt.","Squeeze in the lemon just before serving, not before.","Pour over a hot mustard-curry leaf tempering and fold once."],
  tip:"Pack the tempered dal mix and the lemon separately for the office. Combine at your desk."},
 
-{id:"k9", name:"Chitranna", local:"ಚಿತ್ರಾನ್ನ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium", "nuts"], states:["Karnataka"], slots:["tiffin","breakfast"], time:20, protein:7, heat:1,
+{id:"k9", name:"Chitranna", local:"ಚಿತ್ರಾನ್ನ", region:"Karnataka", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium", "nuts"], states:["Karnataka"], slots:["tiffin","breakfast"], time:20, protein:7, kcal:310, carbs:38, fat:15, fibre:2, heat:1,
  blurb:"Lemon rice, the fastest tiffin there is. Fifteen minutes if the rice is already cooked.",
  ings:["Cooked rice, cooled — 3 cups","Lemon — 2","Turmeric — 1/2 tsp","Peanuts — 1/4 cup","Oil — 3 tbsp","Tempering: mustard, chana dal, urad dal, 2 green chillies slit, 1 dry red chilli, curry leaves, asafoetida","Salt, coriander"],
  steps:["Heat oil, crackle mustard, then add peanuts, chana dal and urad dal and fry till golden.","Add green chillies, red chilli, curry leaves and asafoetida, then turmeric. Take off the heat immediately so the turmeric does not burn.","Pour this over the cooled rice, add salt, and fold gently.","Squeeze in lemon juice last, off the heat, and fold once more. Finish with coriander."],
  tip:"Lemon juice on a hot pan turns bitter. Always add it after the pan is off the stove."},
 
-{id:"k10", name:"Rava Idli", local:"ರವೆ ಇಡ್ಲಿ", region:"Karnataka", diet:"veg", tags:["noallium", "nuts"], states:["Karnataka"], slots:["breakfast"], time:25, protein:9, heat:1,
+{id:"k10", name:"Rava Idli", local:"ರವೆ ಇಡ್ಲಿ", region:"Karnataka", diet:"veg", tags:["noallium", "nuts"], states:["Karnataka"], slots:["breakfast"], time:25, protein:12, kcal:365, carbs:54, fat:11, fibre:4, heat:1,
  blurb:"Idli with no fermentation and no planning — decided at 7 am, eaten at 7:30.",
  ings:["Rava (coarse semolina) — 1.5 cups","Thick curd — 1 cup","Water — about 1/2 cup","Eno fruit salt — 1 tsp (or 1/2 tsp baking soda)","Grated carrot — 1/2 cup, coriander","Cashews — 10, halved","Ghee — 2 tbsp","Tempering: mustard, chana dal, urad dal, 2 green chillies, curry leaves","Salt"],
  steps:["Dry-roast the rava in a pan till it smells nutty and stops looking raw, about 4 minutes. Cool.","Temper mustard, dals, chillies and curry leaves in ghee, fry the cashews, and mix this into the rava with the carrot, coriander and salt.","Whisk in curd and enough water to make a thick, dropping batter. Rest 10 minutes — it will thicken further, so loosen again.","Stir in the Eno with a splash of water right before steaming. Do not beat it down.","Pour into greased moulds and steam 12 minutes. Serve with coconut chutney."],
  tip:"Once the Eno goes in you have about 90 seconds. Have the steamer already hot."},
 
 /* ========== TAMIL NADU ========== */
-{id:"t1", name:"Idli, Sambar and Coconut Chutney", local:"இட்லி", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:30, protein:14, heat:1,
+{id:"t1", name:"Idli, Sambar and Coconut Chutney", local:"இட்லி", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:30, protein:19, kcal:560, carbs:86, fat:15, fibre:11, heat:1,
  blurb:"The default South Indian breakfast, and still the best one. Steamed, no oil, endlessly forgiving.",
  ings:["Idli batter — 3 cups","For sambar: toor dal 3/4 cup, drumstick/pumpkin/shallots 2 cups","Tamarind — lime-sized, sambar powder 2 tbsp","For chutney: 1 cup coconut, 2 tbsp roasted chana dal, 2 green chillies, small ginger, salt","Tempering (both): mustard, curry leaves, asafoetida, 1 dry red chilli","Gingelly oil — 2 tbsp","Salt"],
  steps:["Pressure cook toor dal, 3 whistles, and mash it smooth.","Boil the vegetables with tamarind extract, sambar powder, turmeric and salt for 10 minutes till the raw smell goes.","Add the mashed dal and 1 cup water, simmer 5 minutes, finish with a mustard-curry leaf tempering in gingelly oil.","Grind coconut, roasted chana dal, chillies, ginger and salt with a little water into a chutney and temper it.","Steam idlis 10 minutes. Test with a toothpick — it should come out clean. Rest 3 minutes before unmoulding."],
  tip:"Unmoulding too early is what tears idlis. Give them three minutes off the heat and they slide out."},
 
-{id:"t2", name:"Arachuvitta Sambar", local:"அரைச்சுவிட்ட சாம்பார்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:40, protein:12, heat:2,
+{id:"t2", name:"Arachuvitta Sambar", local:"அரைச்சுவிட்ட சாம்பார்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:40, protein:11, kcal:250, carbs:38, fat:6, fibre:8, heat:2,
  blurb:"Sambar with the masala ground fresh instead of spooned from a packet. Worth doing once a week.",
  ings:["Toor dal — 3/4 cup","Shallots — 15, drumstick — 1, brinjal — 2","Tamarind — lime-sized","Roast and grind: 2 tbsp coriander seeds, 1 tbsp chana dal, 1 tsp urad dal, 4 dry red chillies, 1/2 tsp fenugreek, 3 tbsp coconut","Turmeric, salt, jaggery — 1 tsp","Tempering: gingelly oil, mustard, curry leaves, asafoetida","Coriander to finish"],
  steps:["Dry-roast the coriander seeds, dals, chillies and fenugreek in a teaspoon of oil till deep golden, add coconut for the last minute, and grind with water to a fine paste.","Pressure cook toor dal, 3 whistles, and mash.","Boil the vegetables in tamarind extract with turmeric, salt and jaggery till tender, about 10 minutes.","Add the ground paste and simmer 8 minutes — this is where the flavour develops, do not rush it.","Stir in the dal, thin with hot water, simmer 5 more minutes, and finish with the tempering and coriander."],
  tip:"Grind a double batch of the masala and freeze half. Next week's sambar is then a 20-minute job."},
 
-{id:"t3", name:"Milagu Rasam", local:"மிளகு ரசம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:20, protein:6, heat:2,
+{id:"t3", name:"Milagu Rasam", local:"மிளகு ரசம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:20, protein:1, kcal:60, carbs:6, fat:4, fibre:1, heat:2,
  blurb:"Pepper rasam. Thin, hot, sour — the thing you want when nothing else appeals.",
  ings:["Tamarind — lime-sized, soaked in 2 cups water","Tomato — 1, crushed by hand","Cooked toor dal water — 1/2 cup","Crush coarsely: 1 tsp black pepper, 1 tsp cumin, 3 garlic cloves","Rasam powder — 1 tsp","Turmeric, salt","Tempering: ghee 1 tbsp, mustard, 1 dry red chilli, curry leaves, asafoetida","Coriander"],
  steps:["Crush pepper, cumin and garlic coarsely in a mortar — powdered is not the same thing.","Boil tamarind water with tomato, turmeric, salt and rasam powder for 6 minutes till the raw tamarind smell goes.","Add the crushed pepper-cumin-garlic and the dal water. Thin with 1 cup water.","Heat until it froths at the edges and just begins to rise — then take it off. Boiling rasam kills it.","Temper in ghee, pour over, cover, and let it sit 5 minutes before serving."],
  tip:"Rasam is finished the moment it froths. Watch it, do not walk away."},
 
-{id:"t4", name:"Beans Poriyal", local:"பீன்ஸ் பொரியல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["side"], time:15, protein:5, heat:1,
+{id:"t4", name:"Beans Poriyal", local:"பீன்ஸ் பொரியல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["side"], time:15, protein:3, kcal:130, carbs:9, fat:9, fibre:4, heat:1,
  blurb:"The everyday vegetable. Fifteen minutes, one pan, and it makes any tiffin box look complete.",
  ings:["French beans — 300 g, finely chopped","Grated coconut — 1/3 cup","Moong dal — 2 tbsp, soaked 15 min (optional, adds protein)","Green chilli — 1","Oil — 2 tbsp","Tempering: mustard, urad dal, curry leaves, 1 dry red chilli, asafoetida","Salt, turmeric"],
  steps:["Temper mustard and urad dal in oil, add curry leaves, red chilli and asafoetida.","Add the beans, drained moong dal, turmeric, salt and 3 tablespoons of water.","Cover and cook on low 8 minutes, shaking the pan once. The water should be gone by the end.","Uncover, turn the heat up for a minute to dry it out, then stir in coconut and green chilli. Off the heat."],
  tip:"The same method works for cabbage, carrot, chow chow or raw banana. Learn it once, use it forever."},
 
-{id:"t5", name:"Chow Chow Kootu", local:"சௌ சௌ கூட்டு", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch"], time:25, protein:10, heat:1,
+{id:"t5", name:"Chow Chow Kootu", local:"சௌ சௌ கூட்டு", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch"], time:25, protein:8, kcal:175, carbs:23, fat:6, fibre:5, heat:1,
  blurb:"Vegetable and lentil cooked together and thickened with coconut. Mild, and pairs with anything sour.",
  ings:["Chow chow (chayote) — 2, peeled and cubed","Moong dal — 1/2 cup","Grind: 1/3 cup coconut, 1 tsp cumin, 2 green chillies, 1 tbsp rice flour","Turmeric, salt","Tempering: coconut oil 1 tbsp, mustard, urad dal, curry leaves, 1 dry red chilli"],
  steps:["Pressure cook moong dal and the cubed chow chow together with turmeric, 2 whistles. Do not mash.","Grind coconut, cumin, chillies and rice flour to a coarse paste.","Add the paste and salt to the pot with a little water and simmer 6 minutes till it thickens.","Temper in coconut oil and pour over. Serve alongside a sour kuzhambu or rasam."],
  tip:"Kootu is meant to be mild — it is the calm half of the plate. Resist the urge to spice it."},
 
-{id:"t6", name:"Ven Pongal", local:"வெண் பொங்கல்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], slots:["breakfast"], time:30, protein:11, heat:1,
+{id:"t6", name:"Ven Pongal", local:"வெண் பொங்கல்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], slots:["breakfast"], time:30, protein:11, kcal:405, carbs:54, fat:16, fibre:3, heat:1,
  blurb:"Rice and moong dal cooked soft with pepper, cumin, ginger and a lot of ghee. Comfort in a bowl.",
  ings:["Raw rice — 1 cup","Moong dal — 1/2 cup","Water — 4.5 cups","Ghee — 4 tbsp (do not reduce this)","Black pepper — 1.5 tsp, coarsely crushed","Cumin — 1 tsp","Ginger — 1 inch, minced","Cashews — 12","Curry leaves, asafoetida, salt"],
  steps:["Dry-roast the moong dal till it smells nutty, 3 minutes. This is what stops pongal tasting flat.","Pressure cook rice and roasted dal with 4.5 cups water and salt, 4 whistles. It should be soft and loose, almost porridge.","In ghee, fry cashews till golden, then add crushed pepper, cumin, ginger, curry leaves and asafoetida.","Pour the whole tempering, ghee and all, into the pongal and mix hard.","Serve immediately with coconut chutney and sambar. It stiffens fast."],
  tip:"Pongal sets solid as it cools. Cook it looser than you want to eat it."},
 
-{id:"t7", name:"Adai with Avial", local:"அடை", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:35, ahead:"Soak 3 hrs", protein:18, heat:2,
+{id:"t7", name:"Adai with Avial", local:"அடை", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:35, ahead:"Soak 3 hrs", protein:13, kcal:370, carbs:63, fat:7, fibre:6, heat:2,
  blurb:"A four-dal dosa. The single highest-protein breakfast in this library, and it needs no fermenting.",
  ings:["Raw rice — 1 cup","Toor dal, chana dal, urad dal — 1/4 cup each","Dry red chillies — 5","Asafoetida, salt","Onion — 1, chopped; curry leaves; grated coconut — 3 tbsp","Oil — for cooking","Serve with: avial, or jaggery and butter"],
  steps:["Soak rice and all three dals together with the red chillies for 3 hours.","Grind coarsely — adai batter should feel slightly gritty between your fingers, not smooth like dosa batter. Add salt and asafoetida.","Stir in chopped onion, curry leaves and coconut. Use immediately; no fermenting.","Pour a thick round on a hot tawa, spread lightly, make a hole in the centre and pour oil in it.","Cook 3 minutes each side until deep brown and crisp at the edges."],
  tip:"Adai is meant to be thick and rough. If it looks like a neat thin dosa you have ground it too fine."},
 
-{id:"t8", name:"Thayir Sadam", local:"தயிர் சாதம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:15, protein:12, heat:1,
+{id:"t8", name:"Thayir Sadam", local:"தயிர் சாதம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:15, protein:7, kcal:225, carbs:31, fat:8, fibre:1, heat:1,
  blurb:"Curd rice. The most reliable office tiffin in India — it does not spoil, does not need heating, does not disappoint.",
  ings:["Cooked rice — 2 cups, mashed slightly while warm","Milk — 1/2 cup","Thick curd — 1.5 cups","Salt","Grated carrot and cucumber — 1/2 cup total","Ginger — 1 tsp, minced; green chilli — 1","Pomegranate or grapes — a handful (optional but do it)","Tempering: 1 tbsp oil, mustard, urad dal, curry leaves, 1 dry red chilli, asafoetida"],
  steps:["Mash the warm rice with the back of a ladle until the grains break down. This is what makes it creamy rather than lumpy.","Stir in the milk while it is still warm and let it cool completely.","Once cool, fold in curd, salt, carrot, cucumber, ginger and chilli.","Pour over a hot tempering. Add the fruit last."],
  tip:"Curd into hot rice turns sour by lunchtime. Milk goes in warm, curd goes in cold — that is the rule."},
 
-{id:"t9", name:"Puliyodharai", local:"புளியோதரை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], slots:["tiffin"], time:30, protein:8, heat:2,
+{id:"t9", name:"Puliyodharai", local:"புளியோதரை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], slots:["tiffin"], time:30, protein:6, kcal:370, carbs:47, fat:17, fibre:3, heat:2,
  blurb:"Tamarind rice. Made to be carried — it genuinely tastes better three hours after you make it.",
  ings:["Cooked rice, cooled — 3 cups","Tamarind — lemon-sized, thick extract","Gingelly oil — 4 tbsp","Jaggery — 1 tbsp","Roast and powder: 1 tbsp coriander seeds, 1 tsp fenugreek, 2 tsp sesame seeds, 3 dry red chillies","Tempering: mustard, chana dal, urad dal, peanuts, curry leaves, 2 dry red chillies, asafoetida","Turmeric, salt"],
  steps:["Roast the coriander, fenugreek, sesame and chillies separately till fragrant and grind to a powder.","In gingelly oil, temper mustard, dals, peanuts, curry leaves, chillies and asafoetida.","Add tamarind extract, turmeric, salt and jaggery. Simmer on low 12 minutes until it darkens and oil separates at the edges — this paste is the whole dish.","Stir in 2 teaspoons of the roasted powder. Cool slightly.","Fold into cooled rice. Rest at least 30 minutes before eating."],
  tip:"Make double the tamarind paste and keep it in the fridge. It lasts three weeks and turns rice into lunch in five minutes."},
 
-{id:"t10", name:"Vatha Kuzhambu", local:"வத்தக் குழம்பு", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch"], time:30, protein:6, heat:3,
+{id:"t10", name:"Vatha Kuzhambu", local:"வத்தக் குழம்பு", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch"], time:30, protein:1, kcal:180, carbs:14, fat:13, fibre:2, heat:3,
  blurb:"Dark, sour, fiery tamarind gravy with no dal in it. Keeps for three days and gets better each one.",
  ings:["Tamarind — lemon-sized, thick extract in 2 cups water","Sundakkai vathal or small onions — 1/2 cup","Gingelly oil — 4 tbsp (this much is correct)","Sambar powder — 2 tbsp","Jaggery — 1 tbsp","Rice flour — 1 tsp in a little water","Tempering: mustard, fenugreek, toor dal, curry leaves, 2 dry red chillies, asafoetida","Salt"],
  steps:["Heat the gingelly oil properly. Temper mustard, fenugreek, toor dal, chillies, curry leaves and asafoetida.","Fry the sundakkai or shallots till they darken.","Add tamarind extract, sambar powder, salt and jaggery. Bring to a boil.","Simmer on low 15 minutes until it reduces by a third and the oil floats on top. That floating oil is the doneness signal.","Stir in the rice flour slurry, cook 2 more minutes, and take it off."],
  tip:"Serve with something cooling — kootu, curd, or a simple poriyal. On its own it will flatten you."},
 
-{id:"t11", name:"Masala Dosa", local:"மசாலா தோசை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:25, protein:10, heat:1,
+{id:"t11", name:"Masala Dosa", local:"மசாலா தோசை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","dinner"], time:25, protein:12, kcal:490, carbs:83, fat:12, fibre:8, heat:1,
  blurb:"Crisp dosa with a soft potato filling. Batter from the shop makes this a weekday dish, not a weekend one.",
  ings:["Dosa batter — 3 cups","Potatoes — 4, boiled and roughly crushed","Onion — 2, sliced","Green chillies — 2, ginger — 1 inch","Turmeric — 1/2 tsp","Oil — 2 tbsp + more for the tawa","Tempering: mustard, chana dal, urad dal, curry leaves","Salt, coriander, lemon"],
  steps:["Temper mustard and the dals in oil, add curry leaves, chillies and ginger, then the sliced onion. Fry till translucent, not brown.","Add turmeric and salt, then the crushed potato and a splash of water. Mash together and cook 4 minutes. Finish with coriander and lemon.","Heat the tawa till a sprinkle of water dances. Wipe it with half an onion dipped in oil.","Pour a ladle of batter and spread outward in a spiral, quickly. Drizzle oil around the edge.","When the edges lift and the surface is golden, place the filling on one half and fold. Serve at once."],
  tip:"A tawa that is too cool gives a pale, soft dosa; too hot and the batter seizes before you can spread it. Wipe it with onion between dosas to reset it."},
 
-{id:"t12", name:"Paruppu Usili", local:"பருப்பு உசிலி", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch","side"], time:35, ahead:"Soak dal 2 hrs", protein:15, heat:2,
+{id:"t12", name:"Paruppu Usili", local:"பருப்பு உசிலி", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], slots:["lunch","side"], time:35, ahead:"Soak dal 2 hrs", protein:10, kcal:250, carbs:26, fat:11, fibre:7, heat:2,
  blurb:"Steamed, crumbled dal tossed through a vegetable. Protein-dense and genuinely something you cannot get outside a home.",
  ings:["Toor dal — 1/2 cup, chana dal — 1/4 cup, soaked 2 hrs","Dry red chillies — 4","Asafoetida, salt, turmeric","Beans or cluster beans — 300 g, finely chopped and cooked","Oil — 3 tbsp","Tempering: mustard, urad dal, curry leaves"],
  steps:["Grind the soaked dals with red chillies, asafoetida and salt to a coarse, thick paste using almost no water.","Steam this paste in a greased plate for 12 minutes till firm. Cool, then crumble it between your fingers into fine crumbs.","Temper mustard, urad dal and curry leaves in oil. Add the cooked beans and turmeric.","Add the crumbled dal and roast on medium heat for 8 minutes, breaking lumps, until it is dry and separate.","Taste for salt. It should be crumbly, never pasty."],
  tip:"Grind with as little water as you can bear. Wet paste steams into a block that will not crumble."},
 
 /* ========== ANDHRA & TELANGANA ========== */
-{id:"a1", name:"Tomato Pappu", local:"టమాటా పప్పు", region:"Andhra & Telangana", diet:"veg", tags:["glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:30, protein:14, heat:2,
+{id:"a1", name:"Tomato Pappu", local:"టమాటా పప్పు", region:"Andhra & Telangana", diet:"veg", tags:["glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:30, protein:12, kcal:265, carbs:36, fat:7, fibre:6, heat:2,
  blurb:"Andhra dal — thicker, tangier and hotter than a North Indian dal, and it eats as a main course.",
  ings:["Toor dal — 1 cup","Tomatoes — 3, chopped","Onion — 1","Green chillies — 4, slit","Garlic — 6 cloves","Turmeric, salt","Tamarind — small piece","Tempering: 2 tbsp oil or ghee, mustard, cumin, 2 dry red chillies, curry leaves, asafoetida","Coriander"],
  steps:["Pressure cook toor dal with tomatoes, green chillies, turmeric and a small piece of tamarind — 4 whistles, all together.","Mash hard with a wooden masher until no whole lentils remain.","In a separate pan, temper mustard, cumin, red chillies, garlic and curry leaves in oil till the garlic browns.","Pour the tempering into the dal with salt, add half a cup of hot water, and simmer 5 minutes.","Finish with coriander. Serve with rice and a spoon of ghee."],
  tip:"Andhra pappu should hold its shape on the plate, not run. Keep it thick."},
 
-{id:"a2", name:"Gongura Pachadi", local:"గోంగూర పచ్చడి", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["side"], time:25, protein:4, heat:3,
+{id:"a2", name:"Gongura Pachadi", local:"గోంగూర పచ్చడి", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["side"], time:25, protein:2, kcal:170, carbs:10, fat:14, fibre:3, heat:3,
  blurb:"Sorrel leaf chutney. Sour, fierce, and a spoonful turns plain rice into a meal. Keeps a week.",
  ings:["Gongura (sorrel) leaves — 4 cups, packed","Onion — 1, chopped","Green chillies — 4, dry red chillies — 4","Garlic — 8 cloves","Oil — 4 tbsp","Coriander seeds — 1 tsp, cumin — 1 tsp, fenugreek — 1/4 tsp","Salt","Tempering: mustard, curry leaves, 2 dry red chillies"],
  steps:["Fry the gongura leaves in 2 tablespoons oil until they wilt completely and turn dark — 6 minutes. The colour change is the point.","In the same pan roast coriander seeds, cumin, fenugreek, both chillies and garlic.","Grind the spices first, then add the wilted leaves, onion and salt and grind coarse. No water.","Heat the remaining oil, temper mustard, curry leaves and red chillies, and pour over the chutney.","Store in a glass jar. It keeps a week in the fridge."],
  tip:"Do not add water at any point. Water is why home gongura goes off in two days."},
 
-{id:"a3", name:"Mixed Vegetable Pulusu", local:"పులుసు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:30, protein:7, heat:2,
+{id:"a3", name:"Mixed Vegetable Pulusu", local:"పులుసు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:30, protein:2, kcal:185, carbs:23, fat:10, fibre:4, heat:2,
  blurb:"A sweet-sour tamarind stew. The jaggery is not optional — it is what makes pulusu pulusu.",
  ings:["Tamarind — lemon-sized, extract in 2 cups water","Drumstick, brinjal, pumpkin, okra — 3 cups mixed","Onion — 1, sliced","Jaggery — 2 tbsp","Red chilli powder — 1.5 tsp, coriander powder — 1 tsp","Rice flour — 1 tbsp in water","Tempering: 3 tbsp oil, mustard, fenugreek, cumin, garlic, curry leaves","Turmeric, salt"],
  steps:["Temper mustard, fenugreek, cumin, garlic and curry leaves in oil. Fry the onion till soft.","Add the vegetables and sauté 4 minutes.","Pour in the tamarind extract with turmeric, chilli powder, coriander powder and salt. Boil 12 minutes till the vegetables are tender.","Stir in jaggery and the rice flour slurry. Simmer 4 minutes till it coats a spoon.","Rest 10 minutes before serving — the sourness settles."],
  tip:"Taste at the end and adjust jaggery. It should land sour first, sweet second, never the reverse."},
 
-{id:"a4", name:"Gutti Vankaya Kura", local:"గుత్తి వంకాయ కూర", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:40, protein:9, heat:3,
+{id:"a4", name:"Gutti Vankaya Kura", local:"గుత్తి వంకాయ కూర", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:40, protein:6, kcal:280, carbs:15, fat:24, fibre:6, heat:3,
  blurb:"Small brinjals slit and stuffed with a peanut-sesame masala, then braised. The Andhra dish worth the effort.",
  ings:["Small brinjals — 8, slit into quarters keeping the stem","Roast and grind: 1/3 cup peanuts, 2 tbsp sesame seeds, 2 tbsp dry coconut, 1 tbsp coriander seeds, 1 tsp cumin","Red chilli powder — 2 tsp","Tamarind paste — 1 tsp, jaggery — 1 tsp","Onion — 1, ginger-garlic paste — 1 tbsp","Oil — 4 tbsp, turmeric, salt","Curry leaves"],
  steps:["Roast peanuts, sesame, coconut, coriander and cumin separately till fragrant, then grind to a coarse powder. Mix with chilli powder, turmeric and salt.","Stuff this masala into each slit brinjal. Keep whatever is left over.","Heat oil, fry the stuffed brinjals gently on all sides for 6 minutes. Lift them out.","In the same oil, fry onion and ginger-garlic paste, add the leftover masala, tamarind, jaggery and 1 cup water. Simmer 5 minutes.","Return the brinjals, cover, cook on low 15 minutes without stirring — shake the pan instead. Done when oil floats and the brinjals are collapsing."],
  tip:"Stirring breaks the brinjals apart. Shake the pan by the handle; never put a spoon in it."},
 
-{id:"a5", name:"Pesarattu with Upma", local:"పెసరట్టు", region:"Andhra & Telangana", diet:"veg", tags:["nuts"], states:["Andhra Pradesh", "Telangana"], slots:["breakfast"], time:25, ahead:"Soak moong 5 hrs", protein:19, heat:2,
+{id:"a5", name:"Pesarattu with Upma", local:"పెసరట్టు", region:"Andhra & Telangana", diet:"veg", tags:["nuts"], states:["Andhra Pradesh", "Telangana"], slots:["breakfast"], time:25, ahead:"Soak moong 5 hrs", protein:25, kcal:565, carbs:86, fat:14, fibre:15, heat:2,
  blurb:"Whole green moong dosa with upma inside it. Nineteen grams of protein before you leave the house.",
  ings:["Whole green moong — 1.5 cups, soaked 5 hrs","Green chillies — 3, ginger — 1 inch, cumin — 1 tsp","Rice — 2 tbsp (for crispness)","Salt","Onion — 1, finely chopped, for sprinkling","For upma: 1 cup rava, 2.5 cups water, tempering of mustard, chana dal, cashew, curry leaves, green chilli","Oil, ghee"],
  steps:["Grind soaked moong with chillies, ginger, cumin, rice and salt to a smooth, thick batter. No fermenting, use at once.","Make the upma: roast rava, temper separately, add boiling water and salt, cook covered 4 minutes, finish with ghee.","Spread the batter thick on a hot tawa. Sprinkle chopped onion over the wet surface and press lightly.","Drizzle oil, cook 3 minutes till the base is crisp and lifts cleanly.","Place a spoonful of upma along the centre, fold, and serve with ginger chutney."],
  tip:"Soak the moong before bed. The morning job is then just grind and cook."},
 
-{id:"a6", name:"Ulava Charu", local:"ఉలవ చారు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:45, ahead:"Soak horse gram overnight", protein:17, heat:2,
+{id:"a6", name:"Ulava Charu", local:"ఉలవ చారు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:45, ahead:"Soak horse gram overnight", protein:12, kcal:295, carbs:40, fat:10, fibre:6, heat:2,
  blurb:"Horse gram broth. Deeply savoury, nearly forgotten outside Andhra homes, and one of the highest-protein things you can cook.",
  ings:["Horse gram (ulavalu) — 1 cup, soaked overnight","Tamarind — lemon-sized","Onion — 1, tomato — 2","Ginger-garlic paste — 1 tbsp","Red chilli powder — 1.5 tsp, coriander powder — 1 tsp","Jaggery — 1 tsp","Oil — 3 tbsp","Tempering: mustard, cumin, curry leaves, garlic","Salt, coriander"],
  steps:["Pressure cook the soaked horse gram with plenty of water for 6 whistles until very soft. Strain, keeping ALL the cooking water — that broth is the dish.","Mash half the cooked gram back into the broth; keep the rest for a dry curry another day.","Temper mustard, cumin, garlic and curry leaves in oil, fry onion and ginger-garlic paste, add tomato and the powders.","Pour in the broth with tamarind extract, jaggery and salt. Simmer 20 minutes uncovered until it thickens and darkens.","Finish with coriander. Serve with hot rice and a spoon of ghee."],
  tip:"Never throw away the cooking water. Everything this dish tastes of is in it."},
 
-{id:"a7", name:"Bagara Annam with Mirchi ka Salan", local:"బగారా అన్నం", region:"Andhra & Telangana", diet:"veg", tags:["glutenfree", "nuts"], states:["Telangana"], slots:["lunch","dinner"], time:45, protein:11, heat:3,
+{id:"a7", name:"Bagara Annam with Mirchi ka Salan", local:"బగారా అన్నం", region:"Andhra & Telangana", diet:"veg", tags:["glutenfree", "nuts"], states:["Telangana"], slots:["lunch","dinner"], time:45, protein:11, kcal:480, carbs:67, fat:20, fibre:4, heat:3,
  blurb:"Hyderabadi mildly spiced rice with a peanut-sesame chilli gravy. Biryani flavour without biryani effort.",
  ings:["Basmati rice — 1.5 cups, soaked 20 min","Whole spices: bay leaf, 4 cloves, 2 cardamom, 1 inch cinnamon, shahi jeera","Onion — 1 sliced, green chillies — 2, ginger-garlic paste — 1 tbsp","Mint and coriander — a handful","Ghee — 3 tbsp, salt","For salan: 8 long green chillies, roast-grind 1/3 cup peanuts + 2 tbsp sesame + 2 tbsp coconut","Tamarind paste — 1 tbsp, red chilli powder, turmeric, curry leaves"],
  steps:["For the rice: heat ghee, fry the whole spices, then onion till golden. Add ginger-garlic, chillies, mint and coriander.","Add drained rice, toss 2 minutes, pour in 2.5 cups water and salt. Cover and cook 12 minutes on low. Rest 10 minutes before opening.","For the salan: slit the green chillies and shallow-fry them till blistered. Set aside.","In the same oil temper mustard and curry leaves, add the ground peanut-sesame paste, powders and 1.5 cups water. Simmer 12 minutes till oil separates.","Add tamarind and the fried chillies, simmer 5 minutes. Serve alongside the rice."],
  tip:"The salan tastes better the next day. Make it the night before and the rice takes 20 minutes."},
 
-{id:"a8", name:"Dosakaya Pappu", local:"దోసకాయ పప్పు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:30, protein:13, heat:2,
+{id:"a8", name:"Dosakaya Pappu", local:"దోసకాయ పప్పు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch"], time:30, protein:12, kcal:260, carbs:36, fat:7, fibre:6, heat:2,
  blurb:"Dal with yellow cucumber. Lighter than tomato pappu and better on a hot day.",
  ings:["Toor dal — 1 cup","Dosakaya (yellow cucumber) — 1, peeled and cubed; or regular cucumber","Green chillies — 4","Turmeric, salt","Tamarind — small piece","Tempering: 2 tbsp oil, mustard, cumin, garlic 6 cloves, 2 dry red chillies, curry leaves, asafoetida"],
  steps:["Pressure cook dal with the cucumber cubes, green chillies, turmeric and tamarind — 3 whistles.","Mash lightly, leaving some cucumber pieces whole.","Temper mustard, cumin, crushed garlic, red chillies, curry leaves and asafoetida in oil till the garlic is golden.","Pour into the dal with salt and half a cup of hot water. Simmer 5 minutes."],
  tip:"Cucumber releases water as it cooks. Start with less water than you would for a plain dal."},
 
-{id:"a9", name:"Punugulu", local:"పునుగులు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy"], states:["Andhra Pradesh", "Telangana"], slots:["tiffin","side"], time:20, protein:8, heat:1,
+{id:"a9", name:"Punugulu", local:"పునుగులు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy"], states:["Andhra Pradesh", "Telangana"], slots:["tiffin","side"], time:20, protein:7, kcal:405, carbs:50, fat:19, fibre:3, heat:1,
  blurb:"Crisp fried dumplings from leftover dosa batter. The best possible use of batter that has gone a day too sour.",
  ings:["Sour dosa or idli batter — 2 cups","Onion — 1, finely chopped","Green chillies — 2, minced; ginger — 1 tsp","Rice flour — 2 tbsp","Semolina — 1 tbsp","Cumin — 1/2 tsp, curry leaves, coriander","Salt","Oil — for deep frying"],
  steps:["Mix the batter with onion, chillies, ginger, rice flour, semolina, cumin, curry leaves, coriander and salt. It should be thick enough to drop from a spoon in a ball.","Heat oil to medium — not smoking. Too hot and they brown outside while staying raw inside.","Drop small spoonfuls in, a few at a time, and fry 4–5 minutes turning once, until deep golden and hollow-sounding.","Drain on paper. Serve hot with coconut or peanut chutney."],
  tip:"Rice flour and semolina are what keep them crisp after ten minutes. Do not skip them."},
 
 /* ========== KERALA ========== */
-{id:"e1", name:"Avial", local:"അവിയൽ", region:"Kerala", diet:"veg", tags:["glutenfree", "noallium"], states:["Kerala"], slots:["lunch","side"], time:30, protein:8, heat:1,
+{id:"e1", name:"Avial", local:"അവിയൽ", region:"Kerala", diet:"veg", tags:["glutenfree", "noallium"], states:["Kerala"], slots:["lunch","side"], time:30, protein:4, kcal:255, carbs:21, fat:18, fibre:7, heat:1,
  blurb:"Mixed vegetables in coconut and curd, finished with raw coconut oil. Uses whatever is in the fridge.",
  ings:["Mixed vegetables (drumstick, raw banana, carrot, beans, ash gourd, yam) — 4 cups, cut into fingers","Grind coarsely: 1.5 cups grated coconut, 1 tsp cumin, 3 green chillies","Sour curd — 1/2 cup","Turmeric, salt","Curry leaves — 2 sprigs","Raw coconut oil — 2 tbsp, to finish"],
  steps:["Cook the vegetables with turmeric, salt and just half a cup of water. Add the hard ones first, the soft ones after 5 minutes.","Grind coconut, cumin and chillies coarsely — this must stay textured, not smooth.","Add the coconut mix to the cooked vegetables, toss by shaking the pan, and cook 4 minutes covered.","Take off the heat. Stir in the curd.","Pour raw coconut oil over the top, throw in curry leaves, cover for 5 minutes, and serve. The oil is never cooked."],
  tip:"Cut everything into fingers of the same size. Avial is judged on whether the pieces still hold shape."},
 
-{id:"e2", name:"Cabbage Thoran", local:"തോരൻ", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["side"], time:20, protein:5, heat:1,
+{id:"e2", name:"Cabbage Thoran", local:"തോരൻ", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["side"], time:20, protein:2, kcal:130, carbs:10, fat:10, fibre:4, heat:1,
  blurb:"Dry coconut stir-fry. Twenty minutes and it finishes any rice plate.",
  ings:["Cabbage — 1/2, finely shredded","Grated coconut — 1/2 cup","Crush together: 3 shallots, 2 green chillies, 1/2 tsp cumin, 1/4 tsp turmeric","Coconut oil — 2 tbsp","Tempering: mustard, urad dal, 1 dry red chilli, curry leaves","Salt"],
  steps:["Crush the coconut with the shallots, chillies, cumin and turmeric — by hand or two pulses in a mixer, never a paste.","Temper mustard and urad dal in coconut oil, add red chilli and curry leaves.","Add the shredded cabbage and salt, toss, cover and cook 5 minutes on low. Cabbage releases its own water.","Uncover, add the coconut mix, raise the heat and toss 3 minutes until dry."],
  tip:"Same recipe works for beans, carrot, beetroot or raw jackfruit. Only the cooking time changes."},
 
-{id:"e3", name:"Puttu with Kadala Curry", local:"പുട്ട്", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast"], time:40, ahead:"Soak chana overnight", protein:20, heat:2,
+{id:"e3", name:"Puttu with Kadala Curry", local:"പുട്ട്", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast"], time:40, ahead:"Soak chana overnight", protein:15, kcal:625, carbs:97, fat:20, fibre:16, heat:2,
  blurb:"Steamed rice-and-coconut cylinders with black chickpea curry. Twenty grams of protein and it holds you till 2 pm.",
  ings:["Puttu podi (roasted rice flour) — 2 cups","Grated coconut — 1 cup","Warm salted water — to sprinkle","Black chana — 1 cup, soaked overnight","Onion — 2, tomato — 1","Ginger-garlic paste — 1 tbsp","Coriander powder — 2 tsp, chilli powder — 1 tsp, garam masala — 1/2 tsp","Grind: 1/2 cup coconut, roasted","Coconut oil, curry leaves, salt"],
  steps:["Pressure cook the chana with salt and turmeric, 6 whistles, till soft.","Roast half a cup of coconut in a dry pan till dark brown and grind with a little water.","Fry onion till brown, add ginger-garlic, tomato and the powders. Add the cooked chana with its water and the roasted coconut paste. Simmer 15 minutes.","For the puttu: sprinkle warm salted water into the flour a little at a time, rubbing with your fingers, until it holds a shape when squeezed but crumbles when poked.","Layer coconut and flour alternately in the puttu maker and steam 7 minutes from when steam escapes the top."],
  tip:"Getting the puttu flour moisture right is the only hard part. Squeeze a fistful — it should hold, then break apart cleanly."},
 
-{id:"e4", name:"Appam with Vegetable Stew", local:"അപ്പം", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast","dinner"], time:30, protein:10, heat:1,
+{id:"e4", name:"Appam with Vegetable Stew", local:"അപ്പം", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast","dinner"], time:30, protein:10, kcal:655, carbs:85, fat:32, fibre:8, heat:1,
  blurb:"Lacy-edged, soft-centred appam with a white coconut stew. Gentle food, good for a late dinner.",
  ings:["Appam batter — 3 cups (shop-bought is fine)","Coconut milk — 1 cup thick, 1.5 cups thin","Potato — 2, carrot — 1, beans — 10, peas — 1/2 cup","Onion — 1, sliced; green chillies — 3, slit","Ginger — 1 inch, julienned","Whole spices: 4 cloves, 2 cardamom, 1 inch cinnamon, 10 peppercorns","Coconut oil — 2 tbsp, curry leaves, salt"],
  steps:["Heat coconut oil, fry the whole spices, then onion, ginger and green chillies till soft but still white — do not brown them.","Add the vegetables and the thin coconut milk with salt. Simmer 12 minutes till tender.","Take off the heat, stir in the thick coconut milk and curry leaves. Never boil after this.","For the appam: pour a ladle of batter into a hot appachatti and immediately swirl the pan so batter climbs the sides.","Cover and cook 2 minutes — the centre stays thick and white, the edges go lacy. Do not flip."],
  tip:"Thick coconut milk splits if it boils. It goes in with the flame off, every time."},
 
-{id:"e5", name:"Parippu Curry with Rice", local:"പരിപ്പ് കറി", region:"Kerala", diet:"veg", tags:["glutenfree"], states:["Kerala"], slots:["lunch"], time:25, protein:13, heat:1,
+{id:"e5", name:"Parippu Curry with Rice", local:"പരിപ്പ് കറി", region:"Kerala", diet:"veg", tags:["glutenfree"], states:["Kerala"], slots:["lunch"], time:25, protein:13, kcal:305, carbs:33, fat:13, fibre:7, heat:1,
  blurb:"The first item on a sadya, and a fine everyday dal. Coconut, cumin, and almost no spice.",
  ings:["Moong dal — 1 cup, dry-roasted","Grind: 3/4 cup coconut, 1 tsp cumin, 2 green chillies, 3 shallots","Turmeric, salt","Coconut oil — 2 tbsp","Tempering: mustard, 2 dry red chillies, curry leaves, 3 shallots sliced","Ghee — 1 tsp to finish"],
  steps:["Dry-roast the moong dal till it smells nutty, then pressure cook with turmeric and water, 3 whistles. Mash.","Grind coconut, cumin, green chillies and shallots to a smooth paste.","Add the paste to the dal with salt and a little water. Simmer 6 minutes on low, stirring — it catches easily.","Temper mustard, red chillies, shallots and curry leaves in coconut oil and pour over.","Finish with a teaspoon of ghee. Serve with rice and a pappadam."],
  tip:"Roasting the moong dal first is the difference between this and an ordinary dal. Two minutes, big payoff."},
 
 /* ========== NORTH & PAN-INDIA — VEG ========== */
-{id:"n1", name:"Rajma Chawal", local:"राजमा चावल", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab", "Jammu & Kashmir"], slots:["lunch","dinner"], time:45, ahead:"Soak rajma overnight", protein:19, heat:2,
+{id:"n1", name:"Rajma Chawal", local:"राजमा चावल", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab", "Jammu & Kashmir"], slots:["lunch","dinner"], time:45, ahead:"Soak rajma overnight", protein:13, kcal:295, carbs:39, fat:11, fibre:10, heat:2,
  blurb:"Sunday lunch in most of North India. High protein, keeps well, and the leftovers are better.",
  ings:["Rajma — 1 cup, soaked overnight","Onion — 2, pureed or finely chopped","Tomato — 3, pureed","Ginger-garlic paste — 1.5 tbsp","Coriander powder — 2 tsp, cumin powder — 1 tsp, chilli powder — 1 tsp, garam masala — 1/2 tsp","Bay leaf, 1 tsp cumin seeds","Oil or ghee — 3 tbsp","Salt, coriander, kasuri methi"],
  steps:["Pressure cook the soaked rajma with salt and a bay leaf for 6 whistles. It must be soft enough to crush between two fingers.","Heat oil, crackle cumin, fry onion till genuinely brown — 8 minutes, not 3. This is where the colour comes from.","Add ginger-garlic paste, cook till the raw smell goes, then tomato puree and the powders. Cook till oil separates.","Add the rajma with its cooking water. Mash a ladleful of beans against the side to thicken the gravy.","Simmer 15 minutes uncovered. Finish with garam masala, crushed kasuri methi and coriander."],
  tip:"Undercooked rajma cannot be rescued later. Give it the full six whistles and check before you start the masala."},
 
-{id:"n2", name:"Chole", local:"छोले", region:"North", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Punjab", "Delhi"], slots:["lunch","dinner"], time:40, ahead:"Soak chana overnight", protein:18, heat:2,
+{id:"n2", name:"Chole", local:"छोले", region:"North", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Punjab", "Delhi"], slots:["lunch","dinner"], time:40, ahead:"Soak chana overnight", protein:16, kcal:415, carbs:58, fat:15, fibre:16, heat:2,
  blurb:"Dark, tangy chickpea curry. Cook the chana the night before and this becomes a weekday dish.",
  ings:["Kabuli chana — 1.5 cups, soaked overnight","Tea bag or 1 tsp tea leaves in a muslin (for colour)","Onion — 2, tomato — 3","Ginger-garlic paste — 1.5 tbsp","Chole masala — 2 tbsp, coriander powder — 1 tsp, amchur — 1 tsp","Oil — 3 tbsp, salt","Green chillies, ginger julienne, coriander to finish"],
  steps:["Pressure cook the chana with salt and a tea bag for 6 whistles. Remove the tea bag. The chana should be dark and completely soft.","Fry onion till deep brown, add ginger-garlic, then tomato and cook till the mixture pulls away from the pan.","Add chole masala, coriander powder and amchur. Fry 2 minutes.","Add the chana with its black cooking water. Mash a few chickpeas to thicken.","Simmer 15 minutes. Top with ginger julienne, slit green chilli and coriander."],
  tip:"The tea bag is what makes home chole look like restaurant chole. It adds no taste, only colour."},
 
-{id:"n3", name:"Dal Tadka", local:"दाल तड़का", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["lunch","dinner"], time:25, protein:14, heat:1,
+{id:"n3", name:"Dal Tadka", local:"दाल तड़का", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["lunch","dinner"], time:25, protein:12, kcal:285, carbs:34, fat:11, fibre:6, heat:1,
  blurb:"The fastest real dinner in the book. Twenty-five minutes from nothing to a full plate.",
  ings:["Toor dal — 1 cup (or half toor, half moong)","Turmeric — 1/2 tsp, salt","Onion — 1, tomato — 1","Ginger-garlic — 1 tbsp","For the tadka: 3 tbsp ghee, 1 tsp cumin, 4 garlic cloves sliced, 2 dry red chillies, asafoetida, 1 tsp chilli powder","Kasuri methi, coriander, lemon"],
  steps:["Pressure cook the dal with turmeric, chopped onion and tomato, 3 whistles. Whisk until creamy.","Add salt and hot water to the consistency you want — it thickens as it stands, so keep it loose.","Heat ghee in a small pan. Add cumin, then sliced garlic, and fry till the garlic is golden brown, not pale.","Take the pan off the heat, add red chillies, asafoetida and chilli powder — off the flame, so the chilli does not burn.","Pour the whole thing over the dal, crush in kasuri methi, and squeeze lemon at the table."],
  tip:"Everything good about dal tadka happens in the last 60 seconds. Make the tadka properly or do not bother."},
 
-{id:"n4", name:"Palak Paneer", local:"पालक पनीर", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["dinner"], time:30, protein:22, heat:1,
+{id:"n4", name:"Palak Paneer", local:"पालक पनीर", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["dinner"], time:30, protein:16, kcal:305, carbs:12, fat:23, fibre:4, heat:1,
  blurb:"Bright green, not olive. The trick is blanching and shocking the spinach, which takes two extra minutes.",
  ings:["Spinach — 2 large bunches","Paneer — 250 g, cubed","Onion — 1, tomato — 2","Ginger-garlic paste — 1 tbsp, green chillies — 2","Cumin — 1 tsp","Cream or malai — 2 tbsp","Garam masala — 1/2 tsp, salt","Ghee or butter — 2 tbsp"],
  steps:["Blanch the spinach in boiling water for exactly 90 seconds, then plunge it into ice water. This is what keeps it green.","Grind the drained spinach with green chillies to a coarse puree. Do not over-grind.","Heat ghee, crackle cumin, fry onion till soft, add ginger-garlic, then tomato. Cook till it breaks down.","Add the spinach puree, salt and garam masala. Cook 5 minutes only — long cooking turns it brown.","Fold in the paneer cubes and cream. Warm through for 2 minutes and take it off."],
  tip:"Soak the paneer cubes in hot salted water for 10 minutes before adding. They stay soft instead of turning rubbery."},
 
-{id:"n5", name:"Matar Paneer", local:"मटर पनीर", region:"North", diet:"veg", tags:["glutenfree", "nuts"], states:["North India"], slots:["dinner","lunch"], time:30, protein:21, heat:1,
+{id:"n5", name:"Matar Paneer", local:"मटर पनीर", region:"North", diet:"veg", tags:["glutenfree", "nuts"], states:["North India"], slots:["dinner","lunch"], time:30, protein:16, kcal:375, carbs:18, fat:28, fibre:4, heat:1,
  blurb:"Paneer and peas in a tomato-cashew gravy. The reliable dinner everyone in the house agrees on.",
  ings:["Paneer — 250 g, cubed","Green peas — 1 cup","Onion — 2, tomato — 3","Cashews — 10, soaked","Ginger-garlic paste — 1 tbsp","Coriander powder — 2 tsp, chilli powder — 1 tsp, turmeric, garam masala","Ghee — 3 tbsp, kasuri methi, salt, cream — 2 tbsp"],
  steps:["Boil the onion, tomato and soaked cashews together for 8 minutes, cool, and grind to a smooth puree.","Heat ghee, add the puree and cook on medium 10 minutes until it darkens and oil pools at the edges. This step cannot be shortened.","Add ginger-garlic paste and all the dry powders. Fry 2 minutes.","Add the peas and 1 cup water, simmer 6 minutes.","Add paneer, cream and crushed kasuri methi. Two minutes more, then off the heat."],
  tip:"If the gravy tastes raw, it has not cooked long enough. Give it five more minutes before adding anything else."},
 
-{id:"n6", name:"Paneer Bhurji", local:"पनीर भुर्जी", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["breakfast","dinner","tiffin"], time:20, protein:24, heat:1,
+{id:"n6", name:"Paneer Bhurji", local:"पनीर भुर्जी", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["breakfast","dinner","tiffin"], time:20, protein:13, kcal:265, carbs:9, fat:21, fibre:2, heat:1,
  blurb:"Twenty minutes, twenty-four grams of protein. Works as breakfast, as a roll filling, or as dinner.",
  ings:["Paneer — 250 g, crumbled by hand","Onion — 1, tomato — 2, capsicum — 1 — all finely chopped","Green chillies — 2, ginger — 1 tsp","Turmeric, chilli powder — 1 tsp, coriander powder — 1 tsp","Oil or butter — 2 tbsp","Kasuri methi, coriander, salt, lemon"],
  steps:["Heat oil, fry onion till translucent, add ginger and green chillies.","Add capsicum, cook 2 minutes, then tomato and the dry powders. Cook till the tomato collapses.","Crumble in the paneer by hand — hand-crumbled gives a much better texture than grated.","Toss on high heat for 3 minutes only. Overcooked paneer goes chewy.","Crush in kasuri methi, finish with coriander and a squeeze of lemon."],
  tip:"Roll it into a roti with sliced onion for a tiffin that survives four hours without a fridge."},
 
-{id:"n7", name:"Aloo Paratha", local:"आलू पराठा", region:"North", diet:"veg", tags:[], states:["Punjab"], slots:["breakfast"], time:30, protein:12, heat:1,
+{id:"n7", name:"Aloo Paratha", local:"आलू पराठा", region:"North", diet:"veg", tags:[], states:["Punjab"], slots:["breakfast"], time:30, protein:11, kcal:415, carbs:73, fat:10, fibre:11, heat:1,
  blurb:"Weekend breakfast. Cold mashed potato and a dough that has rested are the two things that decide whether it tears.",
  ings:["Atta — 2 cups, kneaded soft and rested 20 min","Potatoes — 4, boiled, cooled and mashed dry","Onion — 1, finely chopped (optional)","Green chillies — 2, ginger — 1 tsp","Amchur — 1 tsp, red chilli powder — 1 tsp, ajwain — 1/2 tsp","Coriander, salt","Ghee — for cooking"],
  steps:["Mash the potatoes when completely cold. Warm potato releases steam and tears the paratha.","Mix in onion, chillies, ginger, amchur, chilli powder, ajwain, coriander and salt. Taste — the filling should be slightly over-salted.","Roll a small disc of dough, place a ball of filling in the centre, gather the edges over it and pinch shut. Flatten with your palm.","Dust and roll out gently from the centre, turning as you go. Even pressure, no force.","Cook on a hot tawa, ghee on both sides, pressing the edges down, till golden brown spots appear."],
  tip:"If it tears, the filling was wet or you rolled too hard. Patch it with dry flour and carry on — it still tastes the same."},
 
-{id:"n8", name:"Besan Chilla", local:"बेसन चीला", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["breakfast","tiffin"], time:15, protein:16, heat:1,
+{id:"n8", name:"Besan Chilla", local:"बेसन चीला", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["breakfast","tiffin"], time:15, protein:6, kcal:145, carbs:18, fat:6, fibre:4, heat:1,
  blurb:"Fifteen minutes, one bowl, sixteen grams of protein. The weekday breakfast that never fails.",
  ings:["Besan — 1 cup","Water — about 1 cup","Onion — 1, tomato — 1, capsicum — 1/2 — finely chopped","Green chilli — 1, ginger — 1 tsp","Ajwain — 1/2 tsp, turmeric — 1/4 tsp, chilli powder","Coriander, salt","Oil — for the tawa","Optional: 2 tbsp curd, for softness"],
  steps:["Whisk besan with water to a smooth, lump-free batter the thickness of dosa batter. Rest 5 minutes.","Stir in all the chopped vegetables, chilli, ginger, ajwain, turmeric, salt and coriander.","Pour a ladle onto a medium-hot tawa and spread gently to a thick round. Do not go thin — chilla is not dosa.","Drizzle oil around the edge, cover, cook 3 minutes. Flip, cook 2 minutes more.","Serve with mint chutney or plain curd."],
  tip:"Whisk the besan and water first, vegetables second. Adding everything at once guarantees lumps."},
 
-{id:"n9", name:"Poha", local:"पोहा", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Maharashtra", "Madhya Pradesh"], slots:["breakfast"], time:15, protein:9, heat:1,
+{id:"n9", name:"Poha", local:"पोहा", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "nuts"], states:["Maharashtra", "Madhya Pradesh"], slots:["breakfast"], time:15, protein:7, kcal:315, carbs:43, fat:13, fibre:4, heat:1,
  blurb:"Fifteen minutes and mostly waiting. The lowest-effort breakfast in the library.",
  ings:["Thick poha — 2 cups","Onion — 1, potato — 1 small, diced","Green peas — 1/2 cup","Peanuts — 1/4 cup","Green chillies — 2","Turmeric — 1/2 tsp, sugar — 1 tsp, salt","Oil — 2 tbsp","Tempering: mustard, curry leaves","Lemon, coriander, sev"],
  steps:["Rinse the poha in a colander under running water for 20 seconds, then leave it to drain. Do not soak it.","Fry the peanuts in oil and set aside. In the same oil, temper mustard and curry leaves.","Add onion, potato and chillies. Cover and cook 5 minutes till the potato is done, then add peas.","Add turmeric, salt and sugar, then fold in the drained poha gently. Cover 2 minutes on low.","Off the heat, add lemon juice, coriander, the fried peanuts and sev."],
  tip:"Thin poha turns to mush. Buy thick poha, rinse briefly, and never let it sit in water."},
 
-{id:"n10", name:"Kadhi Chawal", local:"कढ़ी चावल", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["lunch"], time:35, protein:14, heat:1,
+{id:"n10", name:"Kadhi Chawal", local:"कढ़ी चावल", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["lunch"], time:35, protein:12, kcal:345, carbs:28, fat:21, fibre:5, heat:1,
  blurb:"Sour curd and besan simmered slow with fried pakoras. Genuinely improves the longer it cooks.",
  ings:["Sour curd — 2 cups, whisked","Besan — 1/2 cup","Water — 4 cups","Turmeric — 1 tsp, salt","For pakora: 1 cup besan, 1 onion sliced, chilli, ajwain, salt, water","Tempering: 2 tbsp ghee, 1 tsp cumin, 1/2 tsp fenugreek, 2 dry red chillies, curry leaves, asafoetida, 1 tsp chilli powder"],
  steps:["Whisk curd, besan, turmeric, salt and water together until completely smooth. Strain it if you doubt yourself.","Bring to a boil on medium, stirring constantly until it boils — after that it will not split. Then lower the heat.","Simmer 25 minutes, stirring every few minutes. It should reduce and turn pale gold. This long simmer is the whole dish.","Meanwhile make a thick pakora batter, fry small pakoras till golden, and drop them into the kadhi for the last 5 minutes.","Finish with a ghee tempering of cumin, fenugreek, red chilli, curry leaves and chilli powder poured over the top."],
  tip:"Stir without stopping until the first boil. Walk away before that and it curdles."},
 
-{id:"n11", name:"Baingan Bharta", local:"बैंगन भर्ता", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["dinner"], time:35, protein:8, heat:2,
+{id:"n11", name:"Baingan Bharta", local:"बैंगन भर्ता", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], slots:["dinner"], time:35, protein:3, kcal:175, carbs:18, fat:11, fibre:6, heat:2,
  blurb:"Smoke-roasted aubergine, mashed with onion and tomato. The flame-roasting is not optional.",
  ings:["Large brinjal — 1 big, rubbed with oil","Onion — 2, finely chopped","Tomato — 3, chopped","Garlic — 8 cloves, ginger — 1 inch","Green chillies — 2","Cumin — 1 tsp, coriander powder — 1 tsp, chilli powder","Mustard oil or ghee — 3 tbsp","Coriander, salt"],
  steps:["Slit the brinjal, push garlic cloves into the slits, oil the skin, and roast it directly on the gas flame, turning, until the skin is fully charred and it collapses — about 12 minutes.","Cool, peel off all the burnt skin, and mash the flesh roughly with a fork. Some texture should remain.","Heat oil, crackle cumin, fry onion till brown, then add ginger, chillies and tomato. Cook till soft.","Add the powders, then the mashed brinjal and salt. Cook uncovered 8 minutes, mashing and stirring.","Finish with plenty of coriander. Serve with roti."],
  tip:"Oven-roasting works but gives you baked brinjal, not bharta. The whole point is the smoke."},
 
-{id:"n12", name:"Vegetable Pulao", local:"पुलाव", region:"North", diet:"veg", tags:["glutenfree"], states:["All India"], slots:["lunch","tiffin"], time:30, protein:10, heat:1,
+{id:"n12", name:"Vegetable Pulao", local:"पुलाव", region:"North", diet:"veg", tags:["glutenfree"], states:["All India"], slots:["lunch","tiffin"], time:30, protein:8, kcal:385, carbs:65, fat:10, fibre:4, heat:1,
  blurb:"One pot, thirty minutes, packs beautifully. Add paneer cubes and it becomes a full tiffin on its own.",
  ings:["Basmati rice — 1.5 cups, soaked 20 min","Mixed vegetables — 2 cups","Onion — 1, sliced","Whole spices: bay leaf, 1 inch cinnamon, 4 cloves, 2 cardamom, 1 tsp cumin","Ginger-garlic paste — 1 tbsp","Mint and coriander — a handful","Ghee — 3 tbsp, salt","Optional: 150 g paneer, cubed and lightly fried"],
  steps:["Heat ghee, fry the whole spices till they smell, then onion till golden at the edges.","Add ginger-garlic paste, then the vegetables. Sauté 3 minutes.","Add drained rice and toss gently for 2 minutes — coating each grain in ghee is what keeps them separate.","Add 2.25 cups water, salt, mint and coriander. Bring to a boil, then cover and cook on the lowest heat 12 minutes.","Rest 10 minutes without opening the lid. Fluff with a fork, fold in fried paneer if using."],
  tip:"Rice to water is 1 : 1.5 for soaked basmati. More than that gives you khichdi."},
 
-{id:"n13", name:"Soya Chunk Curry", local:"सोया करी", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["lunch","dinner"], time:25, protein:28, heat:2,
+{id:"n13", name:"Soya Chunk Curry", local:"सोया करी", region:"North", diet:"veg", tags:["glutenfree"], states:["North India"], slots:["lunch","dinner"], time:25, protein:11, kcal:200, carbs:12, fat:11, fibre:5, heat:2,
  blurb:"The highest-protein vegetarian dish here by a distance. Twenty-eight grams a serving, and it costs almost nothing.",
  ings:["Soya chunks — 1.5 cups dry","Onion — 2, tomato — 3, pureed","Ginger-garlic paste — 1.5 tbsp","Coriander powder — 2 tsp, chilli powder — 1 tsp, turmeric, garam masala","Curd — 2 tbsp","Oil — 3 tbsp, salt","Kasuri methi, coriander"],
  steps:["Boil the soya chunks in salted water for 5 minutes. Drain, then rinse in cold water and SQUEEZE each one dry. Squeezing is what removes the raw smell.","Fry onion till brown, add ginger-garlic, then tomato puree and the powders. Cook till oil separates.","Whisk in the curd off the heat, then return to low flame.","Add the squeezed soya chunks and 1.5 cups water. Simmer 12 minutes so they soak up the gravy.","Crush in kasuri methi and finish with coriander."],
  tip:"Squeeze them properly — twice if needed. Unsqueezed soya is why people think they dislike soya."},
 
-{id:"w1", name:"Misal Pav", local:"मिसळ पाव", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy"], states:["Maharashtra"], slots:["breakfast","dinner"], time:35, ahead:"Sprout matki 2 days", protein:22, heat:3,
+{id:"w1", name:"Misal Pav", local:"मिसळ पाव", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy"], states:["Maharashtra"], slots:["breakfast","dinner"], time:35, ahead:"Sprout matki 2 days", protein:19, kcal:605, carbs:72, fat:24, fibre:12, heat:3,
  blurb:"Sprouted moth bean curry under a layer of farsan. Fiery, filling, and 22 g of protein.",
  ings:["Sprouted matki (moth beans) — 2 cups","Onion — 2, tomato — 2","Ginger-garlic paste — 1 tbsp","Goda masala or garam masala — 1 tbsp, chilli powder — 2 tsp","Grated dry coconut — 3 tbsp, roasted","Oil — 3 tbsp, salt","To serve: pav, farsan, chopped onion, coriander, lemon"],
  steps:["Pressure cook the sprouts with salt and turmeric, 2 whistles. They should be soft but not mushy.","Roast the dry coconut till brown and grind with a little water along with half the fried onion.","Fry the remaining onion till brown, add ginger-garlic, tomato, chilli powder and goda masala. Cook till oil separates.","Add the coconut paste and 2 cups water, boil 10 minutes to make the thin red kat on top.","Serve the sprouts in a bowl, pour the red gravy over, pile farsan, onion and coriander on top, lemon on the side, pav to mop."],
  tip:"Start the sprouts two days ahead: soak overnight, drain, tie in a damp cloth for 24 hours."},
 
-{id:"w2", name:"Khaman Dhokla", local:"ખમણ", region:"West & Pan-India", diet:"veg", tags:["noallium"], states:["Gujarat"], slots:["breakfast","side"], time:30, protein:14, heat:1,
+{id:"w2", name:"Khaman Dhokla", local:"ખમણ", region:"West & Pan-India", diet:"veg", tags:["noallium"], states:["Gujarat"], slots:["breakfast","side"], time:30, protein:10, kcal:280, carbs:29, fat:12, fibre:5, heat:1,
  blurb:"Steamed, spongy, mildly sweet besan cake. No frying, no fermenting, and it packs well.",
  ings:["Besan — 1.5 cups","Semolina — 2 tbsp","Curd — 1/2 cup, water — 3/4 cup","Sugar — 1 tbsp, salt, turmeric — 1/4 tsp","Ginger-chilli paste — 1 tbsp","Lemon juice — 1 tbsp","Eno fruit salt — 1.5 tsp","Tempering: 2 tbsp oil, 1 tsp mustard, 1 tsp sesame, 4 slit green chillies, curry leaves, 1/2 cup water, 1 tbsp sugar","Coriander, grated coconut"],
  steps:["Whisk besan, semolina, curd, water, sugar, salt, turmeric, ginger-chilli paste and lemon juice into a smooth batter. Rest 10 minutes.","Grease a tin and have the steamer already boiling.","Add Eno with a teaspoon of water, fold gently 5 seconds — do not beat — and pour straight into the tin.","Steam 15 minutes. A toothpick should come out clean. Cool 10 minutes, then cut into squares.","Boil the tempering ingredients with water and sugar and pour the whole thing over the cut dhokla. Let it soak in. Top with coriander and coconut."],
  tip:"The sugar-water tempering is what makes dhokla moist instead of dry. Do not skip the water."},
 
-{id:"w3", name:"Pav Bhaji", local:"पाव भाजी", region:"West & Pan-India", diet:"veg", tags:[], states:["Maharashtra"], slots:["dinner"], time:40, protein:15, heat:2,
+{id:"w3", name:"Pav Bhaji", local:"पाव भाजी", region:"West & Pan-India", diet:"veg", tags:[], states:["Maharashtra"], slots:["dinner"], time:40, protein:15, kcal:575, carbs:77, fat:20, fibre:13, heat:2,
  blurb:"Every vegetable in the fridge, mashed into one buttery thing. The best way to use up a sad vegetable drawer.",
  ings:["Potato — 3, cauliflower — 1 cup, carrot — 1, peas — 1 cup, capsicum — 1","Onion — 3, tomato — 4","Ginger-garlic paste — 2 tbsp","Pav bhaji masala — 3 tbsp","Chilli powder — 2 tsp (Kashmiri, for colour)","Butter — 6 tbsp (yes, six)","Pav, chopped onion, lemon, coriander"],
  steps:["Pressure cook potato, cauliflower, carrot and peas together, 3 whistles. Mash roughly.","In a wide pan, melt 4 tablespoons butter, fry onion till soft, add ginger-garlic and capsicum.","Add tomato and cook till it completely breaks down — 8 minutes. Add pav bhaji masala and chilli powder.","Tip in the mashed vegetables with 1 cup water and mash everything together with a potato masher, right in the pan, for a full 5 minutes.","Simmer 10 minutes. Toast the pav in the remaining butter with a pinch of pav bhaji masala. Serve with raw onion and lemon."],
  tip:"Keep mashing while it simmers. Bhaji should have no identifiable pieces left in it."},
 
 /* ========== EGG ========== */
-{id:"g1", name:"Nadan Egg Roast", local:"നാടൻ മുട്ട റോസ്റ്റ്", region:"Kerala", diet:"egg", tags:["nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast","dinner"], time:25, protein:20, heat:2,
+{id:"g1", name:"Nadan Egg Roast", local:"നാടൻ മുട്ട റോസ്റ്റ്", region:"Kerala", diet:"egg", tags:["nodairy", "glutenfree"], states:["Kerala"], slots:["breakfast","dinner"], time:25, protein:8, kcal:220, carbs:11, fat:15, fibre:3, heat:2,
  blurb:"Boiled eggs in a dark, slow-cooked onion masala. Eats with appam, puttu, roti or plain rice.",
  ings:["Eggs — 4, boiled and halved","Onion — 4, thinly sliced (this much is the recipe)","Tomato — 1","Ginger-garlic paste — 1 tbsp","Kashmiri chilli powder — 2 tsp, coriander powder — 1.5 tsp, turmeric, garam masala — 1/2 tsp","Coconut oil — 3 tbsp","Curry leaves — 2 sprigs, salt","Fennel — 1/2 tsp"],
  steps:["Heat coconut oil, add fennel and curry leaves, then the sliced onion with a pinch of salt.","Fry the onion slowly for 12 minutes until deep brown and jammy. This is the dish — do not rush it.","Add ginger-garlic paste, cook 2 minutes, then the powders. Fry on low till the raw smell goes.","Add tomato and a splash of water, cook till it melts into the onion and the oil separates.","Slide in the halved eggs, spoon masala over them, cover and cook 3 minutes. Finish with curry leaves."],
  tip:"Four onions for four eggs sounds wrong and is exactly right. The onion is the gravy."},
 
-{id:"g2", name:"Muttai Kuzhambu", local:"முட்டை குழம்பு", region:"Tamil Nadu", diet:"egg", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:30, protein:19, heat:3,
+{id:"g2", name:"Muttai Kuzhambu", local:"முட்டை குழம்பு", region:"Tamil Nadu", diet:"egg", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:30, protein:8, kcal:250, carbs:10, fat:19, fibre:4, heat:3,
  blurb:"Tamil egg curry in a tamarind and coconut gravy. Sharper and thinner than the Kerala version.",
  ings:["Eggs — 4, boiled","Onion — 2, tomato — 2","Grind: 1/2 cup coconut, 1 tsp fennel, 4 shallots","Tamarind — small lime size","Sambar powder — 2 tsp, chilli powder — 1 tsp, turmeric","Gingelly oil — 3 tbsp","Tempering: mustard, fenugreek, curry leaves","Salt"],
  steps:["Prick the boiled eggs a few times with a fork and shallow-fry them in a little oil with turmeric and chilli powder till the skin blisters. Set aside.","Temper mustard, fenugreek and curry leaves in gingelly oil. Fry onion till soft, add tomato.","Add sambar powder, chilli powder, turmeric and salt, fry 2 minutes.","Pour in tamarind extract and 1.5 cups water. Boil 10 minutes.","Add the ground coconut paste, simmer 6 minutes till thickened, then add the fried eggs and cook 3 more minutes."],
  tip:"Pricking and frying the eggs first lets the gravy get inside them. Plain boiled eggs just sit there."},
 
-{id:"g3", name:"Egg Podimas", local:"முட்டை பொடிமாஸ்", region:"Tamil Nadu", diet:"egg", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","tiffin"], time:15, protein:18, heat:1,
+{id:"g3", name:"Egg Podimas", local:"முட்டை பொடிமாஸ்", region:"Tamil Nadu", diet:"egg", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["breakfast","tiffin"], time:15, protein:7, kcal:155, carbs:4, fat:12, fibre:1, heat:1,
  blurb:"South Indian scrambled egg with mustard, curry leaves and turmeric. Fifteen minutes, packs well in a roti.",
  ings:["Eggs — 4","Onion — 1, finely chopped","Green chillies — 2, ginger — 1 tsp","Turmeric — 1/4 tsp, pepper — 1/2 tsp","Grated coconut — 2 tbsp","Oil — 2 tbsp","Tempering: mustard, urad dal, curry leaves","Salt, coriander, lemon"],
  steps:["Temper mustard and urad dal in oil, add curry leaves, chillies and ginger.","Add onion and fry till translucent, then turmeric, pepper and salt.","Beat the eggs lightly and pour in. Wait 20 seconds before stirring, then scramble on low heat.","Take it off while it still looks slightly underdone — it carries on cooking in the pan.","Fold in coconut, coriander and a squeeze of lemon."],
  tip:"Low heat and patience. High heat gives you rubber."},
 
-{id:"g4", name:"Egg Bhurji", local:"अंडा भुर्जी", region:"North", diet:"egg", tags:["glutenfree"], states:["North India"], slots:["breakfast","dinner","tiffin"], time:15, protein:20, heat:1,
+{id:"g4", name:"Egg Bhurji", local:"अंडा भुर्जी", region:"North", diet:"egg", tags:["glutenfree"], states:["North India"], slots:["breakfast","dinner","tiffin"], time:15, protein:7, kcal:145, carbs:4, fat:11, fibre:1, heat:1,
  blurb:"The North Indian scramble — onion, tomato, chilli, masala. Best eaten straight out of the pan with hot roti.",
  ings:["Eggs — 4","Onion — 1, tomato — 1, capsicum — 1/2","Green chillies — 2, ginger — 1 tsp","Turmeric, chilli powder — 1/2 tsp, garam masala — 1/4 tsp","Butter or oil — 2 tbsp","Coriander, salt","Optional: 2 tbsp milk, for softness"],
  steps:["Heat butter, fry onion till soft, add ginger, chillies and capsicum.","Add tomato and the powders, cook till the tomato collapses.","Beat the eggs with salt and a splash of milk, pour in, and leave them for 15 seconds.","Scramble on medium-low, folding rather than stirring, until just set.","Finish with garam masala and coriander. Serve immediately."],
  tip:"Salt the eggs just before they go in, not ten minutes earlier — salted raw egg goes watery."},
 
 /* ========== CHICKEN ========== */
-{id:"c1", name:"Chicken Chettinad", local:"செட்டிநாடு கோழி", region:"Tamil Nadu", diet:"chicken", tags:["glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:45, protein:35, heat:3,
+{id:"c1", name:"Chicken Chettinad", local:"செட்டிநாடு கோழி", region:"Tamil Nadu", diet:"chicken", tags:["glutenfree"], states:["Tamil Nadu"], slots:["lunch","dinner"], time:45, protein:35, kcal:410, carbs:12, fat:22, fibre:5, heat:3,
  blurb:"Freshly roasted whole spices ground with coconut. The most aromatic chicken in the South, and worth the grinding.",
  ings:["Chicken — 750 g, bone-in, medium pieces","Roast and grind: 2 tbsp coriander seeds, 1 tsp cumin, 1 tsp fennel, 1 tsp pepper, 6 dry red chillies, 1 inch cinnamon, 4 cloves, 3 cardamom, 1 star anise, 1/2 cup grated coconut","Onion — 3, tomato — 2","Ginger-garlic paste — 2 tbsp","Gingelly oil — 4 tbsp","Curry leaves — 3 sprigs, turmeric, salt","Marinate: curd 2 tbsp, turmeric, salt"],
  steps:["Marinate the chicken in curd, turmeric and salt for 20 minutes.","Dry-roast all the whole spices separately until each smells awake, then the coconut till golden. Grind to a coarse powder, then with water to a paste.","Heat gingelly oil, add curry leaves and fennel, fry the onion till deep brown, then ginger-garlic paste.","Add tomato and cook down, then the ground masala paste. Fry on low 6 minutes — this is where Chettinad gets its depth.","Add the chicken, coat well, cover and cook 20 minutes on low in its own juices. Uncover, raise heat, reduce until the masala clings. Finish with curry leaves."],
  tip:"Roast the spices one type at a time. They brown at different speeds and one burnt chilli ruins the pot."},
 
-{id:"c2", name:"Kodi Vepudu", local:"కోడి వేపుడు", region:"Andhra & Telangana", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:35, protein:36, heat:3,
+{id:"c2", name:"Kodi Vepudu", local:"కోడి వేపుడు", region:"Andhra & Telangana", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:35, protein:34, kcal:340, carbs:7, fat:18, fibre:2, heat:3,
  blurb:"Andhra dry chicken fry. Very hot, very little gravy, and it disappears fast.",
  ings:["Chicken — 750 g, small bone-in pieces","Onion — 2, sliced","Ginger-garlic paste — 2 tbsp","Red chilli powder — 2.5 tsp (Guntur if you have it)","Coriander powder — 2 tsp, turmeric, garam masala — 1/2 tsp","Black pepper — 1 tsp, coarsely crushed","Oil — 4 tbsp","Curry leaves — 3 sprigs, green chillies — 3, salt, lemon"],
  steps:["Marinate the chicken with ginger-garlic paste, chilli powder, turmeric and salt for 30 minutes.","Heat oil in a wide pan, add curry leaves and green chillies, then the onion. Fry till golden.","Add the marinated chicken on high heat and sear 5 minutes without stirring much, so it browns rather than steams.","Lower the heat, cover, and cook 15 minutes in its own moisture. No water at any point.","Uncover, add coriander powder, crushed pepper and garam masala, and fry on high 6 minutes until dry and coated. Finish with lemon and more curry leaves."],
  tip:"Use a wide pan, not a deep one. Crowded chicken boils; spread-out chicken fries."},
 
-{id:"c3", name:"Pepper Chicken", local:"மிளகு கோழி", region:"Tamil Nadu", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner"], time:35, protein:35, heat:3,
+{id:"c3", name:"Pepper Chicken", local:"மிளகு கோழி", region:"Tamil Nadu", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner"], time:35, protein:34, kcal:315, carbs:7, fat:15, fibre:3, heat:3,
  blurb:"Black pepper does all the work. Lighter than a chilli-based curry and easier on the stomach at night.",
  ings:["Chicken — 750 g","Black peppercorns — 2 tbsp, coarsely crushed","Onion — 2, sliced","Ginger-garlic paste — 2 tbsp","Fennel — 1 tsp, coriander powder — 2 tsp, turmeric","Curry leaves — 3 sprigs","Coconut oil — 3 tbsp","Salt, lemon"],
  steps:["Crush the peppercorns coarsely in a mortar. Keep half for the end.","Marinate chicken with ginger-garlic, turmeric, half the pepper and salt, 20 minutes.","Heat coconut oil, add fennel and curry leaves, fry onion till golden brown.","Add the chicken, sear on high 5 minutes, then cover and cook on low 18 minutes.","Uncover, add coriander powder and the remaining crushed pepper, and fry on high till the masala is dry and clinging. Lemon at the end."],
  tip:"Half the pepper at the start for heat, half at the end for aroma. Adding it all at once wastes the aroma."},
 
-{id:"c4", name:"Nadan Kozhi Curry", local:"നാടൻ കോഴി കറി", region:"Kerala", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Kerala"], slots:["lunch","dinner"], time:40, protein:34, heat:2,
+{id:"c4", name:"Nadan Kozhi Curry", local:"നാടൻ കോഴി കറി", region:"Kerala", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Kerala"], slots:["lunch","dinner"], time:40, protein:35, kcal:400, carbs:12, fat:22, fibre:5, heat:2,
  blurb:"Kerala home-style chicken curry with roasted coconut. Eats with appam, rice, puttu or porotta.",
  ings:["Chicken — 750 g","Onion — 3, sliced; tomato — 2","Ginger-garlic paste — 2 tbsp","Kashmiri chilli powder — 2 tsp, coriander powder — 2 tbsp, turmeric, garam masala — 1 tsp","Grated coconut — 1/2 cup, roasted dark and ground","Coconut oil — 3 tbsp","Curry leaves, fennel — 1/2 tsp, salt","Thin coconut milk — 1 cup (optional)"],
  steps:["Dry-roast the grated coconut on low until it is genuinely dark brown, then grind with a little water to a smooth paste. Patience here decides the curry.","Heat coconut oil, add fennel and curry leaves, fry onion till brown, then ginger-garlic paste.","Add all the dry powders on very low heat and fry 2 minutes without burning them, then the tomato.","Add the chicken, coat, and cook covered 20 minutes with a little water.","Stir in the roasted coconut paste and coconut milk. Simmer 8 minutes. Finish with a curry-leaf tempering in coconut oil."],
  tip:"The roasted coconut paste is what separates this from a generic chicken curry. Take it darker than looks comfortable."},
 
-{id:"c5", name:"Kori Gassi", local:"ಕೋರಿ ಗಸ್ಸಿ", region:"Karnataka", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Karnataka"], slots:["lunch","dinner"], time:45, protein:34, heat:3,
+{id:"c5", name:"Kori Gassi", local:"ಕೋರಿ ಗಸ್ಸಿ", region:"Karnataka", diet:"chicken", tags:["nodairy", "glutenfree"], states:["Karnataka"], slots:["lunch","dinner"], time:45, protein:35, kcal:455, carbs:10, fat:29, fibre:5, heat:3,
  blurb:"Mangalorean chicken in a red coconut gravy. Traditionally eaten with neer dosa or kori rotti.",
  ings:["Chicken — 750 g","Roast in oil and grind: 8 Byadgi chillies, 2 tbsp coriander seeds, 1 tsp cumin, 1/2 tsp fenugreek, 1 tsp pepper, 6 garlic cloves, 1 cup grated coconut, small tamarind","Onion — 2, sliced","Coconut oil — 3 tbsp","Curry leaves, turmeric, salt","Thick coconut milk — 1/2 cup"],
  steps:["Roast the chillies, coriander, cumin, fenugreek and pepper in a little oil, then the coconut and garlic till golden. Grind with tamarind and water to a fine, deep red paste.","Fry the sliced onion in coconut oil till brown, keeping a few aside for garnish.","Add the chicken with turmeric and salt, sear 5 minutes.","Add the ground masala and 1.5 cups water. Cover and simmer 20 minutes.","Stir in thick coconut milk, warm through without boiling, and finish with curry leaves and the reserved fried onion."],
  tip:"Byadgi chillies give the colour without the burn. If you only have hot chillies, use half and add paprika."},
 
-{id:"c6", name:"Chicken 65", local:"சிக்கன் 65", region:"Tamil Nadu", diet:"chicken", tags:["glutenfree"], states:["Tamil Nadu"], slots:["side","dinner"], time:30, ahead:"Marinate 1 hr", protein:32, heat:3,
+{id:"c6", name:"Chicken 65", local:"சிக்கன் 65", region:"Tamil Nadu", diet:"chicken", tags:["glutenfree"], states:["Tamil Nadu"], slots:["side","dinner"], time:30, ahead:"Marinate 1 hr", protein:28, kcal:435, carbs:12, fat:29, fibre:1, heat:3,
  blurb:"Crisp, red, curry-leaf-heavy fried chicken. Bar food, but honest when made at home.",
  ings:["Boneless chicken — 500 g, cubed","Marinate: 2 tbsp curd, 1.5 tbsp ginger-garlic paste, 2 tsp Kashmiri chilli powder, 1 tsp pepper, 1/2 tsp garam masala, salt, 1 tsp lemon juice","Corn flour — 3 tbsp, rice flour — 2 tbsp","Oil — for frying","To finish: 3 tbsp oil, 4 slit green chillies, 3 sprigs curry leaves, 1 tsp ginger-garlic paste, 2 tbsp curd, pinch of chilli powder"],
  steps:["Marinate the chicken for at least an hour — overnight is better.","Toss the marinated chicken in corn flour and rice flour just before frying.","Deep-fry in batches on medium-high for 5 minutes till deep red-brown and crisp. Drain.","In a separate pan, heat oil, splutter curry leaves and green chillies, add ginger-garlic paste and fry 1 minute.","Whisk in the curd off the heat with a pinch of chilli powder, then toss the fried chicken through it on high heat for 1 minute only."],
  tip:"Rice flour in the coating is what keeps it crisp. Corn flour alone goes soft in ten minutes."},
 
-{id:"c7", name:"Hyderabadi Chicken Dum Biryani", local:"హైదరాబాదీ బిర్యానీ", region:"Andhra & Telangana", diet:"chicken", tags:["glutenfree"], states:["Telangana"], slots:["lunch","dinner"], time:75, ahead:"Marinate 2 hrs", protein:38, heat:3,
+{id:"c7", name:"Hyderabadi Chicken Dum Biryani", local:"హైదరాబాదీ బిర్యానీ", region:"Andhra & Telangana", diet:"chicken", tags:["glutenfree"], states:["Telangana"], slots:["lunch","dinner"], time:75, ahead:"Marinate 2 hrs", protein:58, kcal:1140, carbs:126, fat:42, fibre:5, heat:3,
  blurb:"Raw chicken and half-cooked rice sealed and steamed together. The weekend dish. Plan for it.",
  ings:["Chicken — 1 kg, bone-in","Basmati — 3 cups, soaked 30 min","Marinate: 1 cup thick curd, 3 tbsp ginger-garlic paste, 2 tsp chilli powder, 1 tsp turmeric, 2 tsp biryani masala, juice of 1 lemon, salt, 1 cup fried onions, mint and coriander, 3 tbsp ghee","Whole spices for the rice: bay leaf, 4 cloves, 3 cardamom, 1 inch cinnamon, 1 tsp shahi jeera, 1 tbsp salt","Saffron — a pinch in 1/4 cup warm milk","Ghee — 4 tbsp, fried onions — 1 cup extra"],
  steps:["Marinate the chicken in everything listed for at least 2 hours, ideally overnight. It should look thickly coated.","Boil a large pot of water with the whole spices and plenty of salt. Add the drained rice and cook to exactly 70 per cent — a grain should break with pressure but still have a hard centre. Drain immediately.","Spread the marinated chicken in a heavy-bottomed pot. Layer the drained rice over it. Scatter fried onions, mint, coriander, saffron milk and ghee on top.","Seal the lid with dough or foil. Cook on high 4 minutes, then on the lowest possible flame over a tawa for 35 minutes.","Rest 15 minutes off the heat before opening. Dig from the side to the bottom so every plate gets both layers."],
  tip:"Seventy per cent rice is the whole game. Fully cooked rice before dum gives you biryani-flavoured porridge."},
 
-{id:"c8", name:"Home-style Chicken Curry", local:"घर का चिकन", region:"North", diet:"chicken", tags:["glutenfree"], states:["All India"], slots:["lunch","dinner"], time:40, protein:34, heat:2,
+{id:"c8", name:"Home-style Chicken Curry", local:"घर का चिकन", region:"North", diet:"chicken", tags:["glutenfree"], states:["All India"], slots:["lunch","dinner"], time:40, protein:35, kcal:385, carbs:12, fat:20, fibre:4, heat:2,
  blurb:"No special masala, no grinding. The chicken curry you can make on a Tuesday without thinking.",
  ings:["Chicken — 750 g","Onion — 3, finely chopped","Tomato — 3, pureed","Ginger-garlic paste — 2 tbsp","Curd — 1/2 cup, whisked","Coriander powder — 2 tbsp, chilli powder — 1.5 tsp, turmeric — 1 tsp, garam masala — 1 tsp","Whole spices: bay leaf, 3 cloves, 2 cardamom, 1 inch cinnamon","Oil — 4 tbsp, salt, coriander"],
  steps:["Heat oil, fry the whole spices, then the onion. Brown it properly — 10 minutes on medium, until it is the colour of a coconut shell.","Add ginger-garlic paste, fry till the raw smell goes, then the dry powders on low with a splash of water so they do not burn.","Add tomato puree and cook till oil separates at the edges. Whisk in the curd off the heat.","Add the chicken and salt, coat thoroughly, and fry on high 6 minutes. Then cover and cook 20 minutes on low.","Add hot water to the gravy consistency you want, simmer 5 minutes, finish with garam masala and coriander."],
  tip:"Every North Indian curry is decided in the onion-browning step. Ten minutes, not three."},
 
 /* ========== MUTTON ========== */
-{id:"m1", name:"Mutton Sukka", local:"ಮಟನ್ ಸುಕ್ಕಾ", region:"Karnataka", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Karnataka"], slots:["dinner","side"], time:60, protein:38, heat:3,
+{id:"m1", name:"Mutton Sukka", local:"ಮಟನ್ ಸುಕ್ಕಾ", region:"Karnataka", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Karnataka"], slots:["dinner","side"], time:60, protein:33, kcal:430, carbs:11, fat:27, fibre:5, heat:3,
  blurb:"Mangalorean dry mutton with roasted coconut and Byadgi chilli. Dark, rich, and eaten with neer dosa.",
  ings:["Mutton — 750 g, small pieces","Roast and grind coarsely: 8 Byadgi chillies, 2 tbsp coriander seeds, 1 tsp cumin, 1 tsp pepper, 1/2 tsp fenugreek, 4 garlic cloves","Fresh grated coconut — 1 cup","Onion — 3, sliced","Coconut oil — 4 tbsp","Curry leaves, turmeric, salt","Tamarind — small piece"],
  steps:["Pressure cook the mutton with turmeric, salt and a little water for 5 whistles, until tender but not falling apart. Keep the stock.","Roast the whole spices and garlic in a little oil, then grind coarsely with tamarind — no water, keep it gritty.","In a wide pan, fry the sliced onion in coconut oil till brown. Add curry leaves.","Add the cooked mutton with its stock and the ground masala. Cook uncovered on medium, stirring, until the liquid dries up — about 15 minutes.","Add the fresh grated coconut and roast everything together on high for 6 minutes until the coconut browns and clings to the meat."],
  tip:"Sukka means dry. Keep cooking past the point where it looks done until the masala is actually stuck to the meat."},
 
-{id:"m2", name:"Chettinad Mutton Chukka", local:"செட்டிநாடு மட்டன் சுக்கா", region:"Tamil Nadu", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner","side"], time:60, protein:38, heat:3,
+{id:"m2", name:"Chettinad Mutton Chukka", local:"செட்டிநாடு மட்டன் சுக்கா", region:"Tamil Nadu", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner","side"], time:60, protein:32, kcal:360, carbs:7, fat:21, fibre:3, heat:3,
  blurb:"Pepper-forward dry mutton. Fewer ingredients than the chicken version and twice as intense.",
  ings:["Mutton — 750 g","Roast and grind: 1 tbsp pepper, 1 tbsp coriander seeds, 1 tsp fennel, 4 dry red chillies, 1 inch cinnamon, 3 cloves","Onion — 2, finely chopped","Ginger-garlic paste — 2 tbsp","Gingelly oil — 4 tbsp","Curry leaves — 4 sprigs, turmeric, salt","Grated coconut — 3 tbsp (optional)"],
  steps:["Pressure cook mutton with ginger-garlic paste, turmeric and salt, 5 whistles. Keep the stock.","Dry-roast the spices till fragrant and grind coarse.","Heat gingelly oil, add plenty of curry leaves, fry onion till brown.","Add the cooked mutton and its stock, then the ground masala. Cook on medium uncovered, stirring often, until completely dry — 18 minutes.","Raise the heat for the last 4 minutes to get crisp edges on the meat. Add coconut if using."],
  tip:"Do not add water at the frying stage. If it looks dry too early, lower the heat rather than wetting it."},
 
-{id:"m3", name:"Andhra Mutton Curry", local:"మటన్ కూర", region:"Andhra & Telangana", diet:"mutton", tags:["nodairy", "glutenfree", "nuts"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:60, protein:38, heat:3,
+{id:"m3", name:"Andhra Mutton Curry", local:"మటన్ కూర", region:"Andhra & Telangana", diet:"mutton", tags:["nodairy", "glutenfree", "nuts"], states:["Andhra Pradesh", "Telangana"], slots:["lunch","dinner"], time:60, protein:34, kcal:415, carbs:12, fat:24, fibre:5, heat:3,
  blurb:"Thin, fiery, deeply flavoured mutton gravy. Meant to be poured over rice, not mopped with roti.",
  ings:["Mutton — 750 g, bone-in","Onion — 3, sliced; tomato — 2","Ginger-garlic paste — 2 tbsp","Red chilli powder — 2.5 tsp, coriander powder — 2 tbsp, turmeric","Grind: 2 tbsp poppy seeds, 8 cashews, 1 tbsp dry coconut","Whole spices: bay leaf, 4 cloves, 3 cardamom, 1 inch cinnamon, 1 star anise","Oil — 4 tbsp, curry leaves, salt, coriander, garam masala"],
  steps:["Heat oil, fry the whole spices, then the onion till deep brown. Add ginger-garlic paste.","Add the mutton and sear on high 8 minutes until the pieces are browned all over. This searing is where the flavour starts.","Add tomato, chilli powder, coriander powder, turmeric and salt. Cook 5 minutes.","Transfer to a pressure cooker with 2 cups water, 5 whistles, then simmer 10 minutes on low with the lid off.","Stir in the ground poppy-cashew-coconut paste, simmer 10 minutes till the gravy thickens slightly. Finish with garam masala and coriander."],
  tip:"Sear the mutton before pressure cooking, never after. Boiled-then-fried mutton tastes flat."},
 
-{id:"m4", name:"Mutton Pepper Fry", local:"மட்டன் மிளகு வறுவல்", region:"Tamil Nadu", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner","side"], time:50, protein:37, heat:3,
+{id:"m4", name:"Mutton Pepper Fry", local:"மட்டன் மிளகு வறுவல்", region:"Tamil Nadu", diet:"mutton", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], slots:["dinner","side"], time:50, protein:32, kcal:350, carbs:7, fat:20, fibre:3, heat:3,
  blurb:"Mutton, pepper, curry leaves, almost nothing else. The cleanest-tasting mutton dish here.",
  ings:["Mutton — 750 g","Black pepper — 2.5 tbsp, coarsely crushed","Onion — 2, sliced","Ginger-garlic paste — 2 tbsp","Fennel — 1 tsp","Curry leaves — 5 sprigs (a lot, deliberately)","Gingelly oil — 4 tbsp","Turmeric, salt, lemon"],
  steps:["Pressure cook mutton with ginger-garlic, turmeric, salt and half the crushed pepper, 5 whistles.","Heat oil in a wide pan, add fennel and a big handful of curry leaves, then the onion. Fry till brown.","Add the cooked mutton with its stock and cook on medium, uncovered, until the liquid disappears.","Add the remaining crushed pepper and fry hard on high for 6 minutes, scraping the pan, until the pieces are dark and dry.","Finish with the rest of the curry leaves and a squeeze of lemon."],
  tip:"Crush the pepper in a mortar, never in a mixer. Powdered pepper makes it bitter."},
 
-{id:"m5", name:"Keema Matar", local:"कीमा मटर", region:"North", diet:"mutton", tags:["glutenfree"], states:["North India"], slots:["dinner","tiffin"], time:40, protein:36, heat:2,
+{id:"m5", name:"Keema Matar", local:"कीमा मटर", region:"North", diet:"mutton", tags:["glutenfree"], states:["North India"], slots:["dinner","tiffin"], time:40, protein:28, kcal:365, carbs:11, fat:22, fibre:5, heat:2,
  blurb:"Minced mutton with peas. Cooks faster than any other mutton dish and makes an excellent roll filling.",
  ings:["Mutton keema — 500 g","Green peas — 1 cup","Onion — 2, finely chopped","Tomato — 2, chopped","Ginger-garlic paste — 2 tbsp","Coriander powder — 2 tsp, chilli powder — 1.5 tsp, turmeric, garam masala — 1 tsp","Curd — 3 tbsp","Oil — 3 tbsp, salt, coriander, ginger julienne"],
  steps:["Fry onion in oil till brown, add ginger-garlic paste.","Add the keema and fry on high heat, breaking up lumps with the back of the spoon, until it changes colour and the water it releases dries up — 10 minutes.","Add tomato and the dry powders. Cook till the tomato melts and oil separates. Whisk in curd off the heat.","Add peas and 1 cup water. Cover and simmer 15 minutes until the keema is tender and almost dry.","Finish with garam masala, coriander and ginger julienne."],
  tip:"Dry out the keema's own water fully before adding tomato. Skip that and it stews instead of frying."},
 
-{id:"m6", name:"Mutton Biryani", local:"मटन बिरयानी", region:"North", diet:"mutton", tags:["glutenfree"], states:["All India"], slots:["lunch","dinner"], time:90, ahead:"Marinate 4 hrs", protein:40, heat:3,
+{id:"m6", name:"Mutton Biryani", local:"मटन बिरयानी", region:"North", diet:"mutton", tags:["glutenfree"], states:["All India"], slots:["lunch","dinner"], time:90, ahead:"Marinate 4 hrs", protein:57, kcal:1140, carbs:129, fat:41, fibre:5, heat:3,
  blurb:"The full weekend project. Marinate in the morning, cook in the evening, and feed six.",
  ings:["Mutton — 1 kg, bone-in","Basmati — 3 cups, soaked 30 min","Marinate: 1.5 cups thick curd, 3 tbsp ginger-garlic paste, 2 tsp chilli powder, 1 tsp turmeric, 2 tsp biryani masala, 1 tbsp raw papaya paste (tenderiser), salt, 1 cup fried onions, mint, coriander","Whole spices for rice: bay leaf, 5 cloves, 3 cardamom, cinnamon, 1 tsp shahi jeera, plenty of salt","Saffron in 1/4 cup warm milk","Ghee — 5 tbsp, fried onions — 1.5 cups"],
  steps:["Marinate the mutton at least 4 hours. The papaya paste matters — mutton needs the help that chicken does not.","Cook the marinated mutton in a heavy pot on low for 35 minutes (or 3 whistles in a cooker) until nearly tender, with the marinade becoming a thick masala. It should not be watery.","Boil rice in heavily salted spiced water to 70 per cent — firm centre, broken edges. Drain at once.","Layer rice over the mutton, scatter fried onions, mint, coriander, saffron milk and ghee.","Seal and dum: 4 minutes high, then 40 minutes on the lowest flame over a tawa. Rest 15 minutes before opening."],
  tip:"If the mutton masala is loose when you layer, the bottom will be soup. Dry it out first, always."},
 
-{id:"t13", name:"Medu Vadai", local:"மெது வடை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["breakfast"], time:30, ahead:"Soak urad dal 4 hrs", protein:10, heat:1,
+{id:"t13", name:"Medu Vadai", local:"மெது வடை", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["breakfast"], time:30, ahead:"Soak urad dal 4 hrs", protein:12, kcal:310, carbs:27, fat:14, fibre:7, heat:1,
  blurb:"Urad dal doughnuts, crisp outside and soft inside. The batter does all the work.",
  ings:["Urad dal — 1 cup, soaked 4 hrs", "Green chillies — 2, finely chopped", "Ginger — 1 inch, finely chopped", "Black pepper — 1 tsp, crushed", "Curry leaves — 1 sprig, chopped", "Salt — 3/4 tsp", "Rice flour — 1 tbsp", "Oil — for deep frying"],
  steps:["Drain the dal completely. Grind it with very little water — 2 to 3 tbsp in all, a spoon at a time — to a thick, fluffy batter that holds its shape on a spoon.", "Beat the batter by hand for 2 minutes to trap air. A drop in water should float.", "Stir in the chillies, ginger, pepper, curry leaves, salt and rice flour.", "Heat the oil to medium-hot. Wet your hands, flatten a lemon-sized ball on your palm, push a hole through the middle with your thumb and slide it into the oil.", "Fry 4 to 5 minutes, turning once, until deep golden. Serve hot with coconut chutney and sambar."],
  tip:"Too much water in the grinder is the only real failure. A watery batter will not hold a hole and drinks oil — a spoon more rice flour rescues it."},
 
-{id:"t14", name:"Uthappam", local:"ஊத்தப்பம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["breakfast", "dinner"], time:25, ahead:"Batter fermented and ready", protein:8, heat:1,
+{id:"t14", name:"Uthappam", local:"ஊத்தப்பம்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["breakfast", "dinner"], time:25, ahead:"Batter fermented and ready", protein:10, kcal:345, carbs:62, fat:5, fibre:4, heat:1,
  blurb:"A thick dosa with onion, tomato and chilli pressed into the top. Best from batter a day or two old.",
  ings:["Idli or dosa batter, fermented — 3 cups", "Onion — 1, finely chopped", "Tomato — 1, finely chopped", "Green chillies — 2, finely chopped", "Coriander — a handful, chopped", "Grated carrot — 1/4 cup", "Salt — a pinch for the topping", "Oil or ghee — for cooking"],
  steps:["Mix the onion, tomato, chilli, carrot and coriander with a pinch of salt.", "Heat a tawa to medium and grease it. Pour a ladle of batter and spread it only a little — an uthappam is thick, about the width of a saucer.", "Scatter the vegetables over the top and press them in with the back of the ladle. Drizzle oil around the edge.", "Cover and cook 2 to 3 minutes, until the base is golden and the top has set.", "Flip and cook 1 minute more to char the vegetables lightly. Serve with chutney and sambar."],
  tip:"Batter that is a day or two old gives a softer, tangier uthappam than fresh batter."},
 
-{id:"t15", name:"Sakkarai Pongal", local:"சர்க்கரைப் பொங்கல்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], status:"draft", slots:["side"], time:40, protein:7, heat:0,
+{id:"t15", name:"Sakkarai Pongal", local:"சர்க்கரைப் பொங்கல்", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Tamil Nadu"], status:"draft", slots:["side"], time:40, protein:8, kcal:460, carbs:67, fat:17, fibre:2, heat:0,
  blurb:"Rice and moong dal cooked soft with jaggery, ghee and cardamom. Made for Pongal, wanted all year.",
  ings:["Raw rice — 1/2 cup", "Moong dal — 1/4 cup", "Jaggery — 3/4 cup, grated", "Milk — 1 cup", "Water — 2.5 cups", "Ghee — 4 tbsp", "Cashews — 10", "Raisins — 1 tbsp", "Cardamom — 4 pods, powdered", "Edible camphor — a tiny pinch"],
  steps:["Dry-roast the moong dal until it smells nutty, about 3 minutes. Wash it with the rice.", "Pressure cook the rice and dal with the water and milk, 4 whistles, until very soft. Mash well.", "Melt the jaggery in 1/4 cup water, strain out any grit, and pour it into the mash. Cook on low, stirring, for 5 minutes until it thickens.", "Fry the cashews and raisins in the ghee and pour everything, ghee included, into the pongal.", "Stir in the cardamom and camphor. Serve warm."],
  tip:"Add the jaggery only after the rice is fully cooked. Rice stops softening once the sugar goes in."},
 
-{id:"t16", name:"Mor Kuzhambu", local:"மோர் குழம்பு", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["lunch"], time:25, protein:6, heat:1,
+{id:"t16", name:"Mor Kuzhambu", local:"மோர் குழம்பு", region:"Tamil Nadu", diet:"veg", tags:["glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["lunch"], time:25, protein:5, kcal:160, carbs:9, fat:12, fibre:3, heat:1,
  blurb:"Buttermilk curry thickened with ground coconut. Light, cooling, and done in the time the rice takes.",
  ings:["Sour curd — 2 cups, whisked", "Ash gourd or okra — 1.5 cups, cubed", "Turmeric — 1/4 tsp", "Salt — to taste", "Grind: 1/2 cup grated coconut, 2 green chillies, 1 tsp cumin, 1 tbsp soaked toor dal, small piece of ginger", "Tempering: 1 tbsp coconut oil, 1/2 tsp mustard, 1 dry red chilli, curry leaves, pinch of asafoetida"],
  steps:["Grind the coconut, chillies, cumin, dal and ginger smooth with a little water.", "Boil the vegetable in 1 cup water with the turmeric and salt until just tender.", "Whisk the ground paste into the curd until smooth.", "Turn the heat to low, pour in the curd mixture and stir constantly until it is hot and just starting to steam. Take it off the heat before it boils, or it will split.", "Pour the tempering over. Serve with rice."],
  tip:"Off the flame the moment it froths at the edge. A boiled mor kuzhambu turns grainy."},
 
-{id:"t17", name:"Sundal", local:"சுண்டல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["tiffin", "side"], time:15, ahead:"Soak chickpeas overnight", protein:9, heat:1,
+{id:"t17", name:"Sundal", local:"சுண்டல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Tamil Nadu"], status:"draft", slots:["tiffin", "side"], time:15, ahead:"Soak chickpeas overnight", protein:10, kcal:220, carbs:26, fat:7, fibre:7, heat:1,
  blurb:"Boiled chickpeas tossed with tempering and fresh coconut. Navaratri food, beach food, tiffin food.",
  ings:["White or black chickpeas — 1 cup dry, soaked overnight", "Salt — 1/2 tsp", "Grated coconut — 3 tbsp", "Green chilli — 1, chopped", "Tempering: 1 tbsp oil, 1/2 tsp mustard, 1 tsp urad dal, 1 dry red chilli, curry leaves, pinch of asafoetida", "Raw mango or lemon — a little"],
  steps:["Pressure cook the soaked chickpeas with the salt, 4 to 5 whistles, until soft but whole. Drain.", "Heat the oil and add the mustard. When it pops, add the urad dal, red chilli, green chilli, curry leaves and asafoetida.", "Add the chickpeas and toss for 2 minutes.", "Take it off the heat and mix in the coconut, and grated raw mango or a squeeze of lemon."],
  tip:"Add the coconut off the heat so it stays fresh and moist."},
 
-{id:"t18", name:"Keerai Masiyal", local:"கீரை மசியல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["side", "lunch"], time:20, protein:4, heat:1,
+{id:"t18", name:"Keerai Masiyal", local:"கீரை மசியல்", region:"Tamil Nadu", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["side", "lunch"], time:20, protein:5, kcal:65, carbs:9, fat:2, fibre:3, heat:1,
  blurb:"Greens cooked and mashed coarse with a simple tempering. Eaten with hot rice and ghee.",
  ings:["Spinach or amaranth (keerai) — 2 bunches, chopped", "Moong dal — 2 tbsp", "Green chillies — 2", "Garlic — 3 cloves", "Cumin — 1/2 tsp", "Salt — to taste", "Tempering: 1 tsp oil, 1/2 tsp mustard, 1/2 tsp urad dal, 1 dry red chilli"],
  steps:["Cook the greens and dal with the chillies, garlic, cumin and 1/4 cup water, covered, for 8 minutes.", "Mash with a wooden masher or pulse briefly. It should stay coarse, not become a purée.", "Add salt and pour the tempering over."],
  tip:"Leave the lid off for the last two minutes so the greens stay green."},
 
-{id:"t19", name:"Meen Kuzhambu", local:"மீன் குழம்பு", region:"Tamil Nadu", diet:"fish", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["lunch", "dinner"], time:35, protein:22, heat:2,
+{id:"t19", name:"Meen Kuzhambu", local:"மீன் குழம்பு", region:"Tamil Nadu", diet:"fish", tags:["nodairy", "glutenfree"], states:["Tamil Nadu"], status:"draft", slots:["lunch", "dinner"], time:35, protein:24, kcal:335, carbs:16, fat:21, fibre:3, heat:2,
  blurb:"Tangy tamarind fish curry in gingelly oil. Better a few hours later, better still the next day.",
  ings:["Fish (seer, mackerel or sardine) — 500 g, in pieces", "Tamarind — lemon-sized, soaked in 2 cups water", "Shallots — 12, peeled", "Tomatoes — 2, chopped", "Garlic — 8 cloves", "Kuzhambu chilli powder — 2 tbsp", "Turmeric — 1/2 tsp", "Gingelly oil — 4 tbsp", "Mustard — 1/2 tsp, fenugreek — 1/2 tsp, curry leaves", "Salt — to taste"],
  steps:["Heat the gingelly oil and add the mustard and fenugreek. When the fenugreek darkens, add curry leaves, shallots and garlic and fry until soft.", "Add the tomatoes and cook to a mush, then the chilli powder and turmeric. Fry 1 minute on low.", "Pour in the tamarind water with salt and simmer 12 to 15 minutes, until the raw tamarind smell goes and oil shows on top.", "Slide in the fish and shake the pan rather than stirring. Simmer 6 to 8 minutes until cooked.", "Rest it. Meen kuzhambu is at its best a few hours later."],
  tip:"Never stir once the fish is in. Swirl the pot, or the pieces break."},
 
-{id:"k11", name:"Kesari Bath", local:"ಕೇಸರಿ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["noallium", "nuts"], states:["Karnataka"], status:"draft", slots:["breakfast", "side"], time:20, protein:4, heat:0,
+{id:"k11", name:"Kesari Bath", local:"ಕೇಸರಿ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["noallium", "nuts"], states:["Karnataka"], status:"draft", slots:["breakfast", "side"], time:20, protein:5, kcal:615, carbs:85, fat:28, fibre:2, heat:0,
  blurb:"Semolina roasted in ghee and cooked with sugar and saffron. Half of the Bengaluru chow chow bath.",
  ings:["Fine semolina (rava) — 1 cup", "Sugar — 1 cup", "Ghee — 1/2 cup", "Water — 2.5 cups", "Saffron — a pinch, in 1 tbsp warm milk", "Cardamom — 4 pods, powdered", "Cashews — 10", "Raisins — 1 tbsp"],
  steps:["Fry the cashews and raisins in 2 tbsp ghee and set them aside.", "Roast the rava in 2 tbsp more ghee on low until fragrant and just golden, 6 to 7 minutes.", "Boil the water with the saffron in another pan. Pour it into the rava slowly, stirring hard — it will splutter. Cook until the rava absorbs it.", "Add the sugar. The mixture loosens, then thickens again. Stir in the rest of the ghee a spoon at a time until it leaves the sides of the pan.", "Stir in the cardamom, cashews and raisins."],
  tip:"Sugar goes in only after the rava is cooked. Add it sooner and the grains stay hard."},
 
-{id:"k12", name:"Khara Bath", local:"ಖಾರಾ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["nuts"], states:["Karnataka"], status:"draft", slots:["breakfast"], time:25, protein:6, heat:1,
+{id:"k12", name:"Khara Bath", local:"ಖಾರಾ ಬಾತ್", region:"Karnataka", diet:"veg", tags:["nuts"], states:["Karnataka"], status:"draft", slots:["breakfast"], time:25, protein:7, kcal:290, carbs:40, fat:11, fibre:4, heat:1,
  blurb:"Spiced vegetable semolina — the savoury half of chow chow bath, softer and richer than plain upma.",
  ings:["Semolina (rava) — 1 cup", "Mixed vegetables (carrot, beans, peas) — 1 cup, chopped", "Onion — 1, chopped", "Tomato — 1, chopped", "Green chillies — 2", "Ginger — 1 tsp, grated", "Vangi bath powder — 1 tsp", "Water — 2.5 cups", "Ghee — 3 tbsp", "Tempering: mustard, urad dal, chana dal, curry leaves, a few cashews", "Salt — to taste", "Coriander, lemon — to finish"],
  steps:["Dry-roast the rava until fragrant and set it aside.", "Heat 2 tbsp ghee, do the tempering, then fry the onion, chilli and ginger until soft. Add the tomato, vegetables and powder and cook 3 minutes.", "Pour in the water with salt and bring it to a rolling boil.", "Lower the heat and add the rava in a thin stream, stirring all the time. Cover and cook 3 minutes.", "Finish with coriander, a squeeze of lemon and the last spoon of ghee. Serve with kesari bath for chow chow bath."],
  tip:"The water must be at a full boil when the rava goes in, or it lumps."},
 
-{id:"e6", name:"Olan", local:"ഓലൻ", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Kerala"], status:"draft", slots:["lunch", "side"], time:30, ahead:"Soak cowpeas overnight", protein:6, heat:0,
+{id:"e6", name:"Olan", local:"ഓലൻ", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["Kerala"], status:"draft", slots:["lunch", "side"], time:30, ahead:"Soak cowpeas overnight", protein:4, kcal:200, carbs:10, fat:16, fibre:3, heat:0,
  blurb:"Ash gourd and red cowpeas in coconut milk. The mildest dish on the sadya leaf, and meant to be.",
  ings:["Ash gourd — 2 cups, thin slices", "Red cowpeas (vanpayar) — 1/4 cup, soaked overnight", "Green chillies — 3, slit", "Thin coconut milk — 1.5 cups", "Thick coconut milk — 1/2 cup", "Coconut oil — 1 tbsp", "Curry leaves — 1 sprig", "Salt — to taste"],
  steps:["Pressure cook the cowpeas until soft, 4 whistles.", "Cook the ash gourd with the green chillies in the thin coconut milk with salt until tender, 8 to 10 minutes.", "Add the cowpeas and simmer 2 minutes.", "Pour in the thick coconut milk, heat it through without boiling, and turn off the heat.", "Finish with raw coconut oil and curry leaves. No tempering."],
  tip:"Once the thick milk is in, keep it below a boil so it stays creamy."},
 
-{id:"e7", name:"Erissery", local:"എരിശ്ശേരി", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], status:"draft", slots:["lunch", "side"], time:35, ahead:"Soak cowpeas overnight", protein:7, heat:1,
+{id:"e7", name:"Erissery", local:"എരിശ്ശേരി", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Kerala"], status:"draft", slots:["lunch", "side"], time:35, ahead:"Soak cowpeas overnight", protein:5, kcal:175, carbs:17, fat:11, fibre:4, heat:1,
  blurb:"Pumpkin and cowpeas with a ground coconut paste, finished with coconut fried until deep brown.",
  ings:["Yellow pumpkin — 2 cups, cubed", "Red cowpeas — 1/3 cup, soaked overnight", "Turmeric — 1/4 tsp", "Chilli powder — 1/2 tsp", "Salt — to taste", "Grind: 1/2 cup grated coconut, 1 tsp cumin, 2 green chillies, 2 garlic cloves", "Grated coconut — 1/2 cup more, for roasting", "Tempering: 1 tbsp coconut oil, mustard, 2 dry red chillies, curry leaves"],
  steps:["Pressure cook the cowpeas soft.", "Cook the pumpkin with turmeric, chilli powder and salt in a little water until soft, and mash it lightly.", "Add the cowpeas and the ground coconut paste and simmer 5 minutes.", "In the coconut oil, splutter the mustard, red chillies and curry leaves, then add the second 1/2 cup of coconut and fry it until deep brown.", "Pour the roasted coconut over the erissery and mix."],
  tip:"The deep-brown coconut is the flavour. Take it right to the edge of burnt."},
 
-{id:"e8", name:"Chemmeen Curry", local:"ചെമ്മീൻ കറി", region:"Kerala", diet:"fish", tags:["nodairy", "glutenfree"], states:["Kerala"], status:"draft", slots:["lunch", "dinner"], time:30, protein:20, heat:1,
+{id:"e8", name:"Chemmeen Curry", local:"ചെമ്മീൻ കറി", region:"Kerala", diet:"fish", tags:["nodairy", "glutenfree"], states:["Kerala"], status:"draft", slots:["lunch", "dinner"], time:30, protein:23, kcal:355, carbs:9, fat:26, fibre:1, heat:1,
  blurb:"Prawns in coconut milk soured with kudampuli. Ten minutes of actual cooking.",
  ings:["Prawns — 400 g, cleaned", "Kudampuli (Malabar tamarind) — 3 pieces, soaked in 1/4 cup warm water", "Shallots — 8, sliced", "Ginger — 1 inch, sliced", "Garlic — 5 cloves, sliced", "Green chillies — 3, slit", "Kashmiri chilli powder — 1.5 tsp", "Turmeric — 1/2 tsp, coriander powder — 1 tsp", "Thin coconut milk — 1.5 cups", "Thick coconut milk — 3/4 cup", "Coconut oil — 3 tbsp", "Tempering: mustard, pinch of fenugreek, curry leaves", "Salt — to taste"],
  steps:["Heat the coconut oil, crackle the mustard and fenugreek, and add the shallots, ginger, garlic, chillies and curry leaves. Fry until soft.", "Add the powders on low for a minute, then the thin coconut milk, the kudampuli with its water, and salt. Simmer 8 minutes.", "Add the prawns and cook 4 to 5 minutes, just until they curl.", "Pour in the thick coconut milk and heat without boiling. Finish with a spoon of raw coconut oil and fresh curry leaves."],
  tip:"Prawns go rubbery after five minutes. Add them last and stop early."},
 
-{id:"e9", name:"Pazham Pori", local:"പഴം പൊരി", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "noallium"], states:["Kerala"], status:"draft", slots:["side"], time:20, protein:3, heat:0,
+{id:"e9", name:"Pazham Pori", local:"പഴം പൊരി", region:"Kerala", diet:"veg", tags:["vegan", "nodairy", "noallium"], states:["Kerala"], status:"draft", slots:["side"], time:20, protein:5, kcal:415, carbs:60, fat:18, fibre:3, heat:0,
  blurb:"Ripe nendran banana in a sweet batter, fried. The Kerala tea-shop snack.",
  ings:["Ripe nendran bananas — 2, black-spotted", "Maida — 1 cup", "Rice flour — 2 tbsp", "Sugar — 3 tbsp", "Turmeric — a pinch", "Salt — a pinch", "Water — about 3/4 cup", "Oil — for deep frying"],
  steps:["Whisk the maida, rice flour, sugar, turmeric and salt with the water into a thick, smooth batter, like idli batter. Rest it 15 minutes.", "Peel the bananas, halve them crosswise and cut each half lengthwise into 3 slices.", "Heat the oil to medium. Dip each slice to coat and fry 2 or 3 at a time, turning, until golden, about 4 minutes.", "Drain and serve hot with tea."],
  tip:"Use properly ripe nendran — the skin should be mostly black. Firm yellow ones stay starchy."},
 
-{id:"a10", name:"Pappu Charu", local:"పప్పు చారు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], status:"draft", slots:["lunch"], time:30, protein:8, heat:2,
+{id:"a10", name:"Pappu Charu", local:"పప్పు చారు", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], status:"draft", slots:["lunch"], time:30, protein:7, kcal:165, carbs:26, fat:4, fibre:4, heat:2,
  blurb:"Thin, sour toor dal with tamarind and a garlic tempering. Poured over rice, sometimes drunk.",
  ings:["Toor dal — 1/2 cup", "Tamarind — lemon-sized, soaked in 2 cups water", "Tomato — 1, chopped", "Onion — 1 small, sliced", "Green chillies — 3, slit", "Drumstick or bottle gourd — 1 cup", "Turmeric — 1/4 tsp", "Chilli powder — 1 tsp", "Jaggery — 1 tsp", "Salt — to taste", "Tempering: 1 tbsp oil, mustard, cumin, 2 dry red chillies, 4 garlic cloves crushed, curry leaves, asafoetida", "Coriander — to finish"],
  steps:["Pressure cook the toor dal with the turmeric, 4 whistles, and mash it smooth.", "Boil the tamarind water with the onion, tomato, chillies, vegetable, chilli powder, jaggery and salt until the vegetable is cooked, about 10 minutes.", "Stir in the dal and 1 to 2 cups water — it should be thin, like rasam with body. Simmer 5 minutes.", "Pour the tempering over and add coriander. Serve with rice and a dry fry."],
  tip:"Crush the garlic for the tempering instead of slicing it. It flavours the whole pot."},
 
-{id:"a11", name:"Mirchi Bajji", local:"మిర్చి బజ్జీ", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], status:"draft", slots:["side"], time:30, protein:5, heat:1,
+{id:"a11", name:"Mirchi Bajji", local:"మిర్చి బజ్జీ", region:"Andhra & Telangana", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["Andhra Pradesh", "Telangana"], status:"draft", slots:["side"], time:30, protein:6, kcal:245, carbs:22, fat:15, fibre:4, heat:1,
  blurb:"Large mild chillies in gram flour batter, fried, then slit and stuffed with onion and lemon.",
  ings:["Large mild chillies (bajji mirchi) — 8", "Gram flour (besan) — 1 cup", "Rice flour — 2 tbsp", "Chilli powder — 1/2 tsp", "Carom seeds (ajwain) — 1/2 tsp", "Baking soda — a pinch", "Salt — to taste", "Water — about 1/2 cup", "Oil — for deep frying", "To serve: chopped onion, lemon, coriander"],
  steps:["Slit each chilli lengthwise on one side and scrape out the seeds.", "Whisk the besan, rice flour, chilli powder, ajwain, soda and salt with the water into a thick batter that coats a spoon.", "Heat the oil to medium-hot. Dip each chilli by its stalk until fully coated.", "Fry 2 or 3 at a time, turning, until golden and crisp, 4 to 5 minutes. Drain.", "Slit them open and stuff with chopped onion, coriander and a squeeze of lemon, Guntur style."],
  tip:"If the chillies are hot, soak them slit in salted water for 15 minutes before battering."},
 
-{id:"w4", name:"Vada Pav", local:"वडा पाव", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy"], states:["Maharashtra"], status:"draft", slots:["tiffin", "side"], time:40, protein:9, heat:2,
+{id:"w4", name:"Vada Pav", local:"वडा पाव", region:"West & Pan-India", diet:"veg", tags:["vegan", "nodairy"], states:["Maharashtra"], status:"draft", slots:["tiffin", "side"], time:40, protein:17, kcal:710, carbs:84, fat:34, fibre:10, heat:2,
  blurb:"Spiced potato fritter in a soft bun with dry garlic chutney. Mumbai runs on it.",
  ings:["Potatoes — 4, boiled and mashed", "Garlic — 6 cloves", "Ginger — 1 inch", "Green chillies — 3", "Tempering: 1 tbsp oil, 1/2 tsp mustard, curry leaves, 1/4 tsp turmeric, pinch of asafoetida", "Coriander — a handful, chopped", "Lemon juice — 1 tsp", "Salt — to taste", "Gram flour (besan) — 1 cup, for the batter", "Baking soda — a pinch", "Pav (soft buns) — 8", "Dry garlic chutney and green chutney — to serve", "Oil — for frying"],
  steps:["Crush the garlic, ginger and chillies to a coarse paste.", "Heat the oil, splutter the mustard, add curry leaves, asafoetida, the paste and turmeric and fry 1 minute. Add the potato, salt, lemon and coriander and mix. Cool, then shape into 8 slightly flattened balls.", "Whisk the besan with a pinch of turmeric, the soda, salt and water into a thick, smooth batter.", "Dip each ball and fry in medium-hot oil until golden, about 4 minutes.", "Slit the pav, spread both chutneys, put a hot vada inside and press."],
  tip:"Whisk a spoon of the hot frying oil into the batter for a crisper shell."},
 
-{id:"w5", name:"Sabudana Khichdi", local:"साबुदाणा खिचडी", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Maharashtra"], status:"draft", slots:["breakfast"], time:20, ahead:"Soak sago 5–6 hrs", protein:6, heat:1,
+{id:"w5", name:"Sabudana Khichdi", local:"साबुदाणा खिचडी", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium", "nuts"], states:["Maharashtra"], status:"draft", slots:["breakfast"], time:20, ahead:"Soak sago 5–6 hrs", protein:6, kcal:340, carbs:46, fat:16, fibre:3, heat:1,
  blurb:"Sago pearls tossed with peanuts and potato. Fasting-day food that people eat on every other day too.",
  ings:["Sabudana (sago pearls) — 1 cup", "Roasted peanuts — 1/2 cup, coarsely crushed", "Potato — 1, boiled and cubed", "Green chillies — 2, chopped", "Cumin — 1 tsp", "Ghee — 2 tbsp", "Sugar — 1 tsp", "Salt (rock salt on fast days) — to taste", "Lemon juice, coriander — to finish"],
  steps:["Rinse the sago until the water runs clear, then soak it with water just to its level for 5 to 6 hours. A pearl should mash easily between your fingers.", "Mix the soaked sago with the peanuts, salt and sugar.", "Heat the ghee, add the cumin and green chillies, then the potato, and fry 2 minutes.", "Add the sago and cook on low, tossing gently, 5 to 7 minutes, until the pearls turn translucent.", "Finish with lemon and coriander. Eat it hot — it firms up as it cools."],
  tip:"Too much soaking water is why khichdi goes gluey. Just enough to cover the pearls, no more."},
 
-{id:"w6", name:"Thepla", local:"થેપલા", region:"West & Pan-India", diet:"veg", tags:["noallium"], states:["Gujarat"], status:"draft", slots:["breakfast", "tiffin"], time:35, protein:7, heat:1,
+{id:"w6", name:"Thepla", local:"થેપલા", region:"West & Pan-India", diet:"veg", tags:["noallium"], states:["Gujarat"], status:"draft", slots:["breakfast", "tiffin"], time:35, protein:10, kcal:345, carbs:46, fat:14, fibre:8, heat:1,
  blurb:"Soft spiced flatbread with fenugreek leaves. Travels for days, which is why every Gujarati trip packs it.",
  ings:["Whole wheat flour — 2 cups", "Besan — 1/4 cup", "Fresh fenugreek (methi) leaves — 1 cup, chopped", "Curd — 1/4 cup", "Turmeric — 1/2 tsp", "Chilli powder — 1 tsp", "Ginger-green chilli paste — 1 tsp", "Sesame seeds — 1 tsp", "Oil — 2 tbsp for the dough, more for cooking", "Salt — to taste", "Water — as needed"],
  steps:["Mix the flours, methi, spices, sesame, salt and 2 tbsp oil. Add the curd and just enough water for a soft dough. Rest 15 minutes.", "Divide into 12 balls and roll each thin, about 7 inches across, dusting with flour.", "Cook on a hot tawa about 30 seconds a side, then brush with oil and cook until spotted brown on both sides.", "Stack them in a cloth. They keep 3 days out, a week in the fridge."],
  tip:"The curd is what keeps them soft on day three."},
 
-{id:"w7", name:"Upma", local:"உப்புமா", region:"West & Pan-India", diet:"veg", tags:["nuts"], states:["All India"], status:"draft", slots:["breakfast"], time:20, protein:6, heat:1,
+{id:"w7", name:"Upma", local:"உப்புமா", region:"West & Pan-India", diet:"veg", tags:["nuts"], states:["All India"], status:"draft", slots:["breakfast"], time:20, protein:6, kcal:250, carbs:38, fat:8, fibre:3, heat:1,
  blurb:"Roasted semolina cooked with a South Indian tempering. The ten-minute breakfast.",
  ings:["Semolina (rava) — 1 cup", "Onion — 1, chopped", "Green chillies — 2, chopped", "Ginger — 1 tsp, chopped", "Mixed vegetables — 1/2 cup", "Water — 2.5 cups", "Oil or ghee — 2 tbsp", "Tempering: mustard, urad dal, chana dal, curry leaves, a few cashews", "Salt — to taste", "Lemon, coriander — to finish"],
  steps:["Dry-roast the rava until it smells toasty and each grain moves freely. Set it aside.", "Heat the oil, do the tempering, then fry the onion, chillies and ginger until soft. Add the vegetables for 2 minutes.", "Pour in the water with salt and bring it to a rolling boil.", "Lower the heat and add the rava in a thin stream, stirring all the time. Cover and cook 3 minutes.", "Fluff it, and finish with lemon and coriander."],
  tip:"Roast the rava properly first. It is the difference between fluffy upma and paste."},
 
-{id:"w8", name:"Khichdi", local:"खिचड़ी", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium"], states:["All India"], status:"draft", slots:["lunch", "dinner"], time:30, protein:11, heat:0,
+{id:"w8", name:"Khichdi", local:"खिचड़ी", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium"], states:["All India"], status:"draft", slots:["lunch", "dinner"], time:30, protein:8, kcal:230, carbs:33, fat:7, fibre:3, heat:0,
  blurb:"Rice and moong dal cooked soft together with ghee. The meal for tired days and sick days.",
  ings:["Rice — 1/2 cup", "Yellow moong dal — 1/2 cup", "Turmeric — 1/2 tsp", "Water — 4 cups", "Salt — to taste", "Ghee — 2 tbsp", "Cumin — 1 tsp", "Asafoetida — a pinch", "Ginger — 1 tsp, grated", "Green chilli — 1, slit"],
  steps:["Wash the rice and dal together.", "Heat the ghee in the cooker and add the cumin, asafoetida, ginger and chilli.", "Add the rice and dal and stir 1 minute, then the water, turmeric and salt.", "Pressure cook 4 whistles for soft khichdi, a few more for porridge-like.", "Stir, loosen with hot water if needed, and top with more ghee. Serve with curd, pickle and papad."],
  tip:"Make it looser than you want it. Khichdi thickens a lot as it stands."},
 
-{id:"w9", name:"Masala Chai", local:"मसाला चाय", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium"], states:["All India"], status:"draft", slots:["side"], time:10, protein:3, heat:0,
+{id:"w9", name:"Masala Chai", local:"मसाला चाय", region:"West & Pan-India", diet:"veg", tags:["glutenfree", "noallium"], states:["All India"], status:"draft", slots:["side"], time:10, protein:3, kcal:75, carbs:8, fat:4, fibre:0, heat:0,
  blurb:"Tea boiled with milk, sugar, ginger and cardamom until it has body.",
  ings:["Water — 1.5 cups", "Milk — 1.5 cups", "Tea leaves (CTC) — 3 tsp", "Sugar — 3 tsp", "Ginger — 1 inch, crushed", "Green cardamom — 3, crushed", "Cloves — 2", "Cinnamon — a small piece"],
  steps:["Boil the water with the ginger and spices for 2 minutes.", "Add the tea leaves and boil 1 minute.", "Add the milk and sugar, bring it to a boil, then lower the heat and let it rise and fall two or three times.", "Strain into cups."],
  tip:"Letting it rise and fall is what gives chai its body. Do not rush that step."},
 
-{id:"n14", name:"Dal Makhani", local:"दाल मखनी", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], status:"draft", slots:["lunch", "dinner"], time:60, ahead:"Soak urad and rajma overnight", protein:14, heat:1,
+{id:"n14", name:"Dal Makhani", local:"दाल मखनी", region:"North", diet:"veg", tags:["glutenfree"], states:["Punjab"], status:"draft", slots:["lunch", "dinner"], time:60, ahead:"Soak urad and rajma overnight", protein:12, kcal:295, carbs:30, fat:13, fibre:10, heat:1,
  blurb:"Whole urad and rajma cooked slowly with butter and cream. Time is the main ingredient.",
  ings:["Whole black urad — 3/4 cup", "Rajma — 2 tbsp", "Butter — 3 tbsp", "Onion — 1, finely chopped", "Ginger-garlic paste — 1 tbsp", "Tomato purée — 1 cup", "Kashmiri chilli powder — 1.5 tsp", "Garam masala — 1/2 tsp", "Kasuri methi — 1 tsp", "Cream — 1/4 cup", "Salt — to taste"],
  steps:["Pressure cook the soaked urad and rajma with 4 cups water and salt, 8 to 10 whistles, until completely soft.", "Melt the butter and fry the onion until golden. Add the ginger-garlic paste, then the tomato purée and chilli powder, and cook until the butter separates, about 10 minutes.", "Add the dal with its water, mash some against the pot, and simmer on the lowest heat for at least 30 minutes, stirring now and then and adding water as it thickens.", "Stir in the garam masala, crushed kasuri methi and cream and simmer 5 minutes more."],
  tip:"The longer it simmers, the creamier it gets. An hour beats thirty minutes."},
 
-{id:"n15", name:"Aloo Gobi", local:"आलू गोभी", region:"North", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["North India"], status:"draft", slots:["lunch", "dinner", "side"], time:30, protein:5, heat:1,
+{id:"n15", name:"Aloo Gobi", local:"आलू गोभी", region:"North", diet:"veg", tags:["vegan", "nodairy", "glutenfree"], states:["North India"], status:"draft", slots:["lunch", "dinner", "side"], time:30, protein:4, kcal:195, carbs:22, fat:11, fibre:5, heat:1,
  blurb:"Potato and cauliflower cooked dry in their own steam with turmeric and cumin.",
  ings:["Cauliflower — 1 small, in florets", "Potatoes — 2, cubed", "Onion — 1, chopped", "Ginger — 1 inch, grated", "Green chillies — 2", "Turmeric — 1/2 tsp", "Coriander powder — 1.5 tsp", "Chilli powder — 1 tsp", "Garam masala — 1/2 tsp", "Cumin — 1 tsp", "Oil — 3 tbsp", "Salt — to taste", "Coriander, lemon — to finish"],
  steps:["Heat the oil and add the cumin. Add the onion, ginger and chillies and fry 2 minutes.", "Add the potatoes with the turmeric and salt, cover and cook 5 minutes.", "Add the cauliflower with the coriander and chilli powders, toss, cover and cook on low 12 to 15 minutes, stirring gently twice, until tender.", "Uncover and raise the heat for 2 minutes to brown the edges. Finish with garam masala, coriander and lemon."],
  tip:"Do not add water. The vegetables steam in their own moisture and stay whole."},
 
-{id:"n16", name:"Jeera Rice", local:"जीरा राइस", region:"North", diet:"veg", tags:["glutenfree", "noallium"], states:["North India"], status:"draft", slots:["lunch", "dinner"], time:25, protein:4, heat:0,
+{id:"n16", name:"Jeera Rice", local:"जीरा राइस", region:"North", diet:"veg", tags:["glutenfree", "noallium"], states:["North India"], status:"draft", slots:["lunch", "dinner"], time:25, protein:6, kcal:315, carbs:56, fat:7, fibre:1, heat:0,
  blurb:"Basmati cooked with cumin and whole spices in ghee. The rice for any North Indian curry.",
  ings:["Basmati rice — 1.5 cups, soaked 20 minutes", "Ghee — 2 tbsp", "Cumin — 1.5 tsp", "Bay leaf — 1", "Cloves — 3", "Green cardamom — 2", "Water — 2.75 cups, boiling", "Salt — 1 tsp", "Coriander — to finish"],
  steps:["Heat the ghee and add the cumin and whole spices until the cumin darkens a shade.", "Add the drained rice and fry it gently for 2 minutes.", "Add the boiling water and salt, cover tightly and cook on the lowest heat for 12 minutes.", "Rest 5 minutes off the heat, then fluff with a fork."],
  tip:"Do not lift the lid while it cooks. Resting before fluffing firms the grains."},
 
-{id:"b1", name:"Machher Jhol", local:"মাছের ঝোল", region:"East & Northeast", diet:"fish", tags:["nodairy", "glutenfree", "noallium"], states:["West Bengal"], status:"draft", slots:["lunch", "dinner"], time:35, protein:22, heat:1,
+{id:"b1", name:"Machher Jhol", local:"মাছের ঝোল", region:"East & Northeast", diet:"fish", tags:["nodairy", "glutenfree", "noallium"], states:["West Bengal"], status:"draft", slots:["lunch", "dinner"], time:35, protein:24, kcal:310, carbs:15, fat:17, fibre:2, heat:1,
  blurb:"Bengal's everyday fish curry — light, with potato, cumin and turmeric, eaten with plain rice.",
  ings:["Rohu or catla fish — 500 g, in steaks", "Turmeric — 1 tsp", "Salt — to taste", "Mustard oil — 4 tbsp", "Potatoes — 2, in long wedges", "Nigella seeds (kalonji) — 1/2 tsp", "Green chillies — 3, slit", "Ginger paste — 1 tsp", "Cumin powder — 1 tsp", "Coriander powder — 1 tsp", "Chilli powder — 1/2 tsp", "Tomato — 1, chopped", "Water — 2 cups", "Coriander — to finish"],
  steps:["Rub the fish with half the turmeric and some salt and rest 10 minutes. Heat the mustard oil until it smokes lightly, let it cool a little, and fry the fish golden on both sides. Set aside.", "Fry the potato wedges in the same oil until golden and set aside.", "Add the kalonji and green chillies, then the tomato, ginger paste and powders loosened with a little water. Cook until the oil separates.", "Add the water and potatoes and simmer until the potatoes are nearly done, about 10 minutes.", "Slide in the fish, simmer 5 minutes, and finish with coriander."],
  tip:"Heat mustard oil to smoking first. It takes the raw pungency off."},
 
-{id:"b2", name:"Aloo Posto", local:"আলু পোস্ত", region:"East & Northeast", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["West Bengal"], status:"draft", slots:["side", "lunch"], time:25, protein:5, heat:1,
+{id:"b2", name:"Aloo Posto", local:"আলু পোস্ত", region:"East & Northeast", diet:"veg", tags:["vegan", "nodairy", "glutenfree", "noallium"], states:["West Bengal"], status:"draft", slots:["side", "lunch"], time:25, protein:5, kcal:225, carbs:28, fat:10, fibre:5, heat:1,
  blurb:"Potatoes coated in a smooth poppy seed paste. Mild, nutty, and eaten with rice and dal.",
  ings:["Potatoes — 4, cubed", "Poppy seeds (posto) — 4 tbsp, soaked 30 minutes", "Green chillies — 3", "Mustard oil — 2 tbsp", "Nigella seeds (kalonji) — 1/2 tsp", "Turmeric — a pinch", "Sugar — a pinch", "Salt — to taste"],
  steps:["Grind the soaked poppy seeds with 2 green chillies and a little water to a very smooth paste.", "Heat the mustard oil and add the kalonji and the third chilli, slit. Add the potatoes with salt and turmeric and cook covered on low for 10 minutes, until nearly soft.", "Add the posto paste with 1/2 cup water and the sugar, and cook until the potatoes are soft and coated, about 5 minutes.", "Drizzle a little raw mustard oil on top before serving."],
@@ -1583,7 +1594,7 @@ window.DISHES = [
 window.TRACKS = [
  {id:"southveg", name:"South Veg", tag:"Karnataka · Tamil Nadu · Andhra", diet:"Pure veg, South only",
   about:"Nothing from the North at all. Rice-based, coconut-based, and the highest sambar-to-effort ratio of the six.",
-  protein:"32 g / person / day",
+  protein:"27 g protein · 990 kcal / person / day",
   days:[
    {d:"Monday",   b:"t1",  l:"a1",  n:"t3",  note:"Idli batter from the fridge. Pappu is a 3-whistle job."},
    {d:"Tuesday",  b:"k1",  l:"k4",  n:"e2",  note:"Soak rice Monday night for neer dosa."},
@@ -1596,7 +1607,7 @@ window.TRACKS = [
 
  {id:"fullveg", name:"All-India Veg", tag:"South-led, North included", diet:"Pure veg",
   about:"South Indian breakfasts, and lunch and dinner drawn from across the country. The most varied of the veg tracks.",
-  protein:"46 g / person / day",
+  protein:"37 g protein · 1,080 kcal / person / day",
   days:[
    {d:"Monday",   b:"n9",  l:"n3",  n:"n6",  note:"Easiest start to the week. Poha, dal, paneer bhurji."},
    {d:"Tuesday",  b:"t1",  l:"n1",  n:"t4",  note:"Soak rajma Sunday night and cook it Monday night."},
@@ -1609,7 +1620,7 @@ window.TRACKS = [
 
  {id:"northveg", name:"North Veg", tag:"Roti, dal, paneer", diet:"Pure veg, North only",
   about:"Wheat-led rather than rice-led. Heavier in paneer and legumes, lighter in coconut.",
-  protein:"49 g / person / day",
+  protein:"34 g protein · 930 kcal / person / day",
   days:[
    {d:"Monday",   b:"n9",  l:"n3",  n:"n5",  note:"Dal tadka and matar paneer — the reliable opening."},
    {d:"Tuesday",  b:"n8",  l:"n1",  n:"n11", note:"Rajma soaked Sunday, cooked Monday night."},
@@ -1622,7 +1633,7 @@ window.TRACKS = [
 
  {id:"vegegg", name:"Veg + Egg", tag:"Eggs carry the protein", diet:"Vegetarian plus egg",
   about:"The veg week with eggs on four days. The simplest way to add 20 g of protein without changing how you cook.",
-  protein:"48 g / person / day",
+  protein:"31 g protein · 870 kcal / person / day",
   days:[
    {d:"Monday",   b:"g4",  l:"a1",  n:"t4",  note:"Egg bhurji with roti — fastest high-protein start there is."},
    {d:"Tuesday",  b:"t1",  l:"n1",  n:"g1",  note:"Egg roast for dinner. Four onions, cooked slowly."},
@@ -1635,7 +1646,7 @@ window.TRACKS = [
 
  {id:"mixed", name:"Everything Mixed", tag:"Veg, egg, chicken, mutton", diet:"No restrictions",
   about:"Veg breakfasts throughout, non-veg on four nights, one big weekend cook. The most balanced week of the six.",
-  protein:"62 g / person / day",
+  protein:"55 g protein · 1,070 kcal / person / day",
   days:[
    {d:"Monday",   b:"n9",  l:"a1",  n:"c8",  note:"Veg lunch, chicken dinner. Brown the onions properly."},
    {d:"Tuesday",  b:"t1",  l:"n1",  n:"t4",  note:"All-veg day to sit between two meat days."},
@@ -1648,7 +1659,7 @@ window.TRACKS = [
 
  {id:"nonveg", name:"Non-Veg Heavy", tag:"Meat at lunch and dinner", diet:"Chicken, mutton, egg daily",
   about:"Non-veg twice a day on most days. Highest protein, highest cost, and the one to run only while training hard.",
-  protein:"80 g / person / day",
+  protein:"69 g protein · 1,040 kcal / person / day",
   days:[
    {d:"Monday",   b:"g4",  l:"c8",  n:"c3",  note:"Cook a double batch of chicken curry Sunday night for Monday lunch."},
    {d:"Tuesday",  b:"g3",  l:"m5",  n:"c2",  note:"Keema packs better than any bone-in curry."},
@@ -1886,7 +1897,7 @@ en: {
   "x_settings":"Settings",
   "x_household":"Your household",
   "x_householdhint":"Every recipe is written for four. Recipe cards and the shopping list scale to this number.",
-  "x_targethint":"Off until you set it. It counts only the three dishes on the board — curd, milk, a dal on the side and snacks come on top, which is how the ready weeks reach the 80 to 95 g a day they quote. Once set, days under it show in amber and auto-fill aims for it.",
+  "x_targethint":"Off until you set it. It counts only the three dishes on the board — plain rice, roti, curd, milk and snacks served alongside are not counted unless they are in the recipe. Calories work the same way. Once set, days under it show in amber and auto-fill aims for it.",
   "x_textsize":"Text size",
   "x_contrast":"Contrast",
   "x_contrastlab":"High contrast",
@@ -3065,6 +3076,7 @@ window.WORLD["Oceania"] = [
     h += '<span class="chip">' + d.time + " " + T("u_min") + "</span>";
     if (d.ahead) h += '<span class="chip">' + esc(d.ahead) + "</span>";
     h += '<span class="chip pro">' + d.protein + " " + T("u_gp") + "</span>";
+    if (d.kcal) h += '<span class="chip kcal">' + d.kcal + " kcal</span>";
     return h;
   }
   var TIFF = '<svg viewBox="0 0 40 46" aria-hidden="true"><path d="M12 10V6Q12 2 16 2H24Q28 2 28 6V10" fill="none" stroke="currentColor" stroke-width="3"/><rect x="3" y="11" width="34" height="10" rx="4" fill="currentColor" opacity=".55"/><rect x="3" y="23" width="34" height="10" rx="4" fill="currentColor"/><rect x="3" y="35" width="34" height="10" rx="4" fill="currentColor"/></svg>';
@@ -3166,6 +3178,19 @@ window.WORLD["Oceania"] = [
     return hit ? hit.n : WLANGS[code];
   }
   /* The diet-need badges, the way an airline lists meal codes. */
+  var NUTL = {en:["Calories","Protein","Carbs","Fat","Fibre","Per serving · estimated from the ingredients"],
+    hi:["कैलोरी","प्रोटीन","कार्ब्स","वसा","फ़ाइबर","प्रति सर्विंग · सामग्री से अनुमान"],
+    kn:["ಕ್ಯಾಲೊರಿ","ಪ್ರೋಟೀನ್","ಕಾರ್ಬ್ಸ್","ಕೊಬ್ಬು","ನಾರು","ಪ್ರತಿ ಸರ್ವಿಂಗ್ · ಪದಾರ್ಥಗಳಿಂದ ಅಂದಾಜು"],
+    ta:["கலோரி","புரதம்","கார்ப்ஸ்","கொழுப்பு","நார்ச்சத்து","ஒரு பரிமாறலுக்கு · பொருட்களிலிருந்து மதிப்பீடு"],
+    te:["కేలరీలు","ప్రోటీన్","కార్బ్స్","కొవ్వు","పీచు","ఒక్కో సర్వింగ్ · పదార్థాల నుండి అంచనా"],
+    ml:["കലോറി","പ്രോട്ടീൻ","കാർബ്സ്","കൊഴുപ്പ്","നാരുകൾ","ഒരു സെർവിംഗ് · ചേരുവകളിൽ നിന്നുള്ള കണക്ക്"]};
+  function nutRow(d) {
+    if (!d.kcal) return "";
+    var L = NUTL[lang] || NUTL.en;
+    var cell = function (v, u, l) { return '<div class="nut"><b>' + v + '<small>' + u + "</small></b><span>" + l + "</span></div>"; };
+    return '<div class="nutrow">' + cell(d.kcal, "", L[0]) + cell(d.protein, "g", L[1]) + cell(d.carbs, "g", L[2]) + cell(d.fat, "g", L[3]) + cell(d.fibre, "g", L[4]) +
+      '<p class="nuthint">' + L[5] + "</p></div>";
+  }
   function needChips(d) {
     var dt = d.tags || [], out = [];
     NEEDS.forEach(function (it) {
@@ -3217,7 +3242,7 @@ window.WORLD["Oceania"] = [
         '<h2 id="sheetTitle">' + markHtml(d.diet) + " " + esc(d.name) + "</h2>" + loc +
         '<p class="blurb">' + esc(d.blurb) + "</p>" +
         (lang !== "en" && !d._tr ? '<p class="rxen">' + T("rx_en") + "</p>" : "") +
-        needChips(d) +
+        needChips(d) + nutRow(d) +
         '<span class="meta">' + dishChips(d) +
           '<span class="chip">' + d.slots.map(function (s) { return T(s); }).join(" · ") + "</span>" +
         "</span>" +
@@ -3364,7 +3389,7 @@ window.WORLD["Oceania"] = [
      your own dishes, settings, sharing. Everything is stored on the
      device; nothing leaves it unless the person shares a link.
      ================================================================ */
-  var BUILD = "2026.10.09";
+  var BUILD = "2026.10.10";
   var BASE_SERVES = 4;   // every recipe is written for four
 
   function defaults(o, d) {
@@ -3746,16 +3771,16 @@ window.WORLD["Oceania"] = [
       (state.moving ? '<div class="alert move">' + T("x_movehint") + ' <button class="mini" data-movecancel="1">' + T("cancel") + "</button></div>" : "");
 
     document.getElementById("board").innerHTML = DAYS.map(function (day, i) {
-      var out = !!m.out[i], total = 0, n = people(i), isToday = isThis && i === todayIndex();
+      var out = !!m.out[i], total = 0, kc = 0, n = people(i), isToday = isThis && i === todayIndex();
       var body = MEALS.map(function (mm) {
         var key = i + "-" + mm.k, d0 = BYID[state.slots[key]], d = d0 ? TD(d0) : null;
-        if (d && !out) total += d.protein;
+        if (d && !out) { total += d.protein; kc += d.kcal || 0; }
         var lock = !!m.locks[key], left = !!m.left[key];
         var inner = d
           ? '<button class="chosen" draggable="true" data-drag="' + key + '" data-id="' + d.id + '" style="--rc:' + rc(d.region) + '">' +
               "<b>" + esc(d.name) + "</b>" +
               (left ? '<span class="lefttag">' + T("x_lefttag") + "</span>" : "") +
-              '<span class="sm">' + markHtml(d.diet) + d.time + " " + T("u_min") + " · " + d.protein + " " + T("u_g") + "</span></button>" +
+              '<span class="sm">' + markHtml(d.diet) + d.time + " " + T("u_min") + " · " + d.protein + " " + T("u_g") + (d.kcal ? " · " + d.kcal + " kcal" : "") + "</span></button>" +
             '<span class="slotacts">' +
               '<button class="mini" data-pick="' + key + '">' + T("change") + "</button>" +
               '<button class="mini danger" data-clear="' + key + '">' + T("remove") + "</button>" +
@@ -3786,7 +3811,7 @@ window.WORLD["Oceania"] = [
       return '<div class="dayc' + (out ? " isout" : "") + (isToday ? " istoday" : "") + '">' +
         "<h3>" + esc(DAYSS[i]) + ' <span class="dd">' + esc(fmtDate(dayDate(i), { day: "numeric" })) + "</span>" +
           '<span class="g' + (short ? " short" : "") + '"' + (short ? ' title="' + esc(T("x_short").replace("{n}", PREFS.target - total)) + '"' : "") + ">" +
-          (out ? T("x_out_s") : total ? total + " " + T("u_g") : "—") + "</span>" +
+          (out ? T("x_out_s") : total ? total + " " + T("u_g") + (kc ? " · " + kc + " kcal" : "") : "—") + "</span>" +
           '<button class="dmenu" data-dmenu="' + i + '" aria-label="' + esc(T("x_daytools")) + '" aria-expanded="false">⋯</button></h3>' +
         tools + (out ? '<div class="outnote">' + T("x_outnote") + "</div>" : "") + body + "</div>";
     }).join("");
@@ -4037,20 +4062,20 @@ window.WORLD["Oceania"] = [
     var wk = WEEKS[THIS_WEEK] || {}, i = todayIndex(), mt = meta(THIS_WEEK), out = !!mt.out[i];
     var now = new Date();
     var head = '<div class="tdhead"><h2>' + esc(fmtDate(now, { weekday: "long", day: "numeric", month: "long" })) + "</h2>";
-    var total = 0;
+    var total = 0, tkc = 0;
     var cards = MEALS.map(function (mm) {
       var key = i + "-" + mm.k, d0 = BYID[wk[key]];
       if (!d0) return '<div class="tcard empty2"><span class="sl">' + mm.label + '</span><button class="pick" data-todaypick="' + key + '">' + T("pick") + "</button></div>";
-      var d = TD(d0); total += d.protein;
+      var d = TD(d0); total += d.protein; tkc += d0.kcal || 0;
       return '<div class="tcard" style="--rc:' + rc(d.region) + '">' + photo(d0.name, "tph") + '<span class="sl">' + mm.label + (mt.left[key] ? " · " + T("x_lefttag") : "") + "</span>" +
         '<button class="tname" data-id="' + d.id + '">' + markHtml(d.diet) + " " + esc(d.name) + "</button>" +
-        '<span class="sm">' + d.time + " " + T("u_min") + " · " + d.protein + " " + T("u_g") + "</span>" +
+        '<span class="sm">' + d.time + " " + T("u_min") + " · " + d.protein + " " + T("u_g") + (d0.kcal ? " · " + d0.kcal + " kcal" : "") + "</span>" +
         '<div class="row"><button class="btn" data-cook="' + d.id + '">' + T("x_startcook") + "</button>" +
         '<button class="btn ghost" data-id="' + d.id + '">' + T("x_recipe") + "</button></div></div>";
     }).join("");
     var short = PREFS.target && total && total < PREFS.target;
     head += '<p class="tdsum' + (short ? " short" : "") + '">' + (out ? T("x_outnote") :
-      total + (PREFS.target ? " / " + PREFS.target : "") + " g " + T("x_proteintoday") + (short ? " · " + T("x_short").replace("{n}", PREFS.target - total) : "")) + "</p></div>";
+      total + (PREFS.target ? " / " + PREFS.target : "") + " g " + T("x_proteintoday") + (tkc ? " · " + tkc + " kcal" : "") + (short ? " · " + T("x_short").replace("{n}", PREFS.target - total) : "")) + "</p></div>";
     var tm = new Date(); tm.setDate(tm.getDate() + 1);
     var prep = prepFor(tm);
     var prepHtml = '<div class="tprep"><h3>' + T("x_tonightprep") + "</h3>" + (prep.length ? prep.map(function (p) {
@@ -5180,6 +5205,39 @@ window.WORLD["Oceania"] = [
     if (onToday) location.href = "index.html";              // on Today: logo opens the front page
     else document.querySelector('.tab[data-v="today"]').click(); // anywhere else: logo goes to Today
   }, true);
+
+  /* ---- appearance: Auto / Light / Dark (kept on this device) ---- */
+  var THL = { en: ["Appearance", "Auto", "Light", "Dark"], hi: ["रूप", "अपने-आप", "लाइट", "डार्क"], kn: ["ನೋಟ", "ಸ್ವಯಂ", "ಲೈಟ್", "ಡಾರ್ಕ್"],
+    ta: ["தோற்றம்", "தானியங்கி", "லைட்", "டார்க்"], te: ["రూపం", "ఆటో", "లైట్", "డార్క్"], ml: ["രൂപം", "ഓട്ടോ", "ലൈറ്റ്", "ഡാർക്ക്"] };
+  function TH(i) { var l = document.documentElement.getAttribute("data-lang") || "en"; return (THL[l] || THL.en)[i]; }
+  function getTheme() { try { return localStorage.getItem("mealboard-theme") || "auto"; } catch (e) { return "auto"; } }
+  function applyTheme(t) {
+    var r = document.documentElement;
+    if (t === "light" || t === "dark") r.setAttribute("data-theme", t); else r.removeAttribute("data-theme");
+    var dark = t === "dark" || (t !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+    var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute("content", dark ? "#16140F" : "#3B2A1E");
+  }
+  applyTheme(getTheme());
+  if (window.matchMedia) { try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { applyTheme(getTheme()); }); } catch (e) {} }
+  function themeField() {
+    var cur = getTheme();
+    return '<div class="fld" id="themeFld"><span>' + TH(0) + "</span><div>" +
+      ["auto", "light", "dark"].map(function (k, i) {
+        return '<button class="pill" type="button" data-themeset="' + k + '" aria-pressed="' + (cur === k) + '">' + TH(i + 1) + "</button>";
+      }).join("") + "</div></div>";
+  }
+  var sheetEl = $("#sheet");
+  new MutationObserver(function () {
+    var c = sheetEl.querySelector("[data-contrast]");
+    if (c && !sheetEl.querySelector("#themeFld")) c.closest(".fld").insertAdjacentHTML("beforebegin", themeField());
+  }).observe(sheetEl, { childList: true, subtree: true });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-themeset]"); if (!b) return;
+    var t = b.dataset.themeset;
+    try { localStorage.setItem("mealboard-theme", t); } catch (er) {}
+    applyTheme(t);
+    sheetEl.querySelectorAll("[data-themeset]").forEach(function (x) { x.setAttribute("aria-pressed", String(x.dataset.themeset === t)); });
+  });
 
   setLabels();
   paintToggle();

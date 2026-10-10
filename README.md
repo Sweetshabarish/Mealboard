@@ -4,7 +4,23 @@ Plan a week of South Indian home cooking. Seventy dishes with full recipes, six 
 weeks, a board you fill yourself, a shopping list that builds itself, and a cooking mode.
 In six languages. No accounts, no server, and it works offline once opened.
 
-Build **2026.10.09** — redesign: bottom tab bar on phones, compact header with a profile panel (language, settings, how to use it), week tools in one ⋯ menu, dish filters folded behind one button, "Full recipe" vs "Recipe coming" cards, 44 px buttons, Leaf-green buttons in dark mode, and ready-week protein shown per person from the real recipes.
+Build **2026.10.10**.
+
+## What changed in 2026.10 (v2 + v3)
+
+- Phone layout: bottom tab bar, compact header with a profile panel, week tools in one ⋯ menu, dish filters folded behind one button, "Full recipe" vs "Recipe coming" cards.
+- Every recipe shows calories, protein, carbs, fat and fibre per serving, estimated from the ingredients. Curries and dals now list the rice or roti they are served with, so the numbers are for the whole plate.
+- Recipes are translated into Hindi, Kannada, Tamil, Telugu and Malayalam (all 96). Native-speaker review is still recommended before a commercial launch.
+- Today: a hero card for the next meal, the other meals as tiers, "Cook double tonight?" (fills tomorrow's tiffin), tonight's prep, and a Sunday review with a kolam drawn from the week.
+- Prep ahead · this week: every soak / ferment / marinate job across the week, with an optional 9 pm reminder.
+- What's in my kitchen? (Dishes): tap what you have and see dishes ranked by how little else you need. Also an "In season" filter by month.
+- Festival weeks: Onam, Pongal, Ugadi, Diwali, Ramzan — under Ready weeks.
+- Kids' tiffin box: optional 4th slot per day (Settings), dry / no-spill dishes only, counted per child in the shopping list.
+- Shopping budget: a ₹ estimate per week and per shop from rough Indian retail prices (tap any price to correct it), plus one cheaper swap.
+- Amma mode (Settings): big text, high contrast, three actions, and each cooking step read aloud. Night-cooking toggle (☾) inside cooking mode.
+- Counter mode (Settings): prop the phone by the stove — clock, next meal, multiple timers, optional voice ("start", "next", "set 10 minutes").
+- Rack view (Week ⋯): the week as seven steel tiffins; tap one to lift it. Share the week as a kolam picture.
+- Appearance: Auto / Light / Dark in Settings. Tablet rail layout at 1024 px and wider.
 
 ## What goes in the repo
 
